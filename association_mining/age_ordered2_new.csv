@@ -1,0 +1,750 @@
+,source,target,weight,type,count
+684,cyclobenzaprine,electrocardiogram qrs complex prolonged,730.9333333333333,1,8.0
+766,promethazine,posterior reversible encephalopathy syndrome,730.9333333333333,1,6.0
+923,rivaroxaban,menorrhagia,730.9333333333333,1,38.0
+973,dimethyl fumarate,haemorrhage,730.9333333333333,1,4.0
+928,temsirolimus,febrile neutropenia,730.9333333333333,1,20.0
+294,treprostinil,systemic lupus erythematosus,730.9333333333333,1,43.0
+421,vincristine,tachypnoea,730.9333333333333,1,42.0
+692,oxymetazoline,left ventricular dysfunction,730.9333333333333,1,6.0
+691,oxymetazoline,sinus bradycardia,730.9333333333333,1,6.0
+799,leflunomide,generalised tonic-clonic seizure,730.9333333333333,1,6.0
+801,leflunomide,parainfluenzae virus infection,730.9333333333333,1,9.0
+662,benzonatate,torsade de pointes,730.9333333333333,1,7.0
+802,leflunomide,posterior reversible encephalopathy syndrome,730.9333333333333,1,7.0
+742,sulfamethoxazole,posterior reversible encephalopathy syndrome,730.9333333333333,1,21.0
+423,benazepril,pneumonia aspiration,730.9333333333333,1,4.0
+685,cyclobenzaprine,generalised tonic-clonic seizure,730.9333333333333,1,9.0
+643,naproxen,mydriasis,730.9333333333333,1,11.0
+527,leucovorin,parainfluenzae virus infection,730.9333333333333,1,9.0
+524,nystatin,posterior reversible encephalopathy syndrome,730.9333333333333,1,10.0
+956,crizotinib,hypokalaemia,730.9333333333333,1,22.0
+46,cholecalciferol,abortion spontaneous,730.9333333333333,1,25.0
+1036,fish oil,cardiac failure congestive,730.9333333333333,1,33.0
+826,ifosfamide,stomatitis,730.9333333333333,1,32.0
+817,bupropion,muscle rigidity,730.9333333333333,1,7.0
+573,mycophenolate mofetil,generalised tonic-clonic seizure,730.9333333333333,1,8.0
+831,finasteride,erectile dysfunction,730.9333333333333,1,11.0
+530,trazodone,haemodynamic instability,730.9333333333333,1,5.0
+341,levothyroxine,abortion spontaneous,730.9333333333333,1,25.0
+332,methylphenidate,dystonia,730.9333333333333,1,30.0
+44,folic acid,inflammatory bowel disease,480.1947565543071,1,14.0
+304,amlodipine,circulatory collapse,404.6666666666667,1,14.0
+657,loperamide,inflammatory bowel disease,340.2597402597403,1,5.0
+686,cyclobenzaprine,intentional self-injury,332.7096774193548,1,6.0
+626,clopidogrel,atrioventricular block,266.1166666666667,1,6.0
+663,bumetanide,atrioventricular block,255.96153846153845,1,6.0
+761,amoxicillin,circulatory collapse,253.4232365145228,1,14.0
+838,enoxaparin,atrioventricular block,226.3598615916955,1,6.0
+91,bortezomib,hypoalbuminaemia,225.64012738853503,1,11.0
+672,ondansetron,inflammatory bowel disease,223.6962134251291,1,13.0
+623,nitroglycerin,hypokalaemia,204.675,1,6.0
+424,benazepril,mental status changes,195.5,1,5.0
+645,naproxen,sinus tachycardia,172.4375,1,8.0
+311,amlodipine,streptococcal infection,171.83199079401612,1,6.0
+622,lisinopril,poor venous access,166.91933760683762,1,7.0
+655,diazepam,status epilepticus,163.38823529411764,1,7.0
+694,methylprednisolone,parainfluenzae virus infection,158.66782006920414,1,9.0
+31,rituximab,posterior reversible encephalopathy syndrome,158.23480662983425,1,7.0
+833,budesonide,inflammatory bowel disease,149.8,1,10.0
+130,citalopram,mydriasis,148.3106796116505,1,8.0
+61,cholecalciferol,inflammatory bowel disease,145.23851531291612,1,17.0
+575,mycophenolate mofetil,posterior reversible encephalopathy syndrome,140.81506849315068,1,11.0
+11,insulin glargine,infective pulmonary exacerbation of cystic fibrosis,140.74772727272727,1,9.0
+819,bupropion,myoclonus,138.7110187110187,1,10.0
+312,amlodipine,parainfluenzae virus infection,138.41297798377752,1,12.0
+957,crizotinib,stomatitis,131.98395721925132,1,38.0
+129,citalopram,muscle rigidity,129.3532258064516,1,7.0
+271,omeprazole,mydriasis,120.25016880486156,1,7.0
+420,vincristine,atrial fibrillation,113.60090556274255,1,17.0
+827,levetiracetam,meningitis aseptic,110.65145554681354,1,19.0
+798,leflunomide,febrile neutropenia,109.3936170212766,1,7.0
+529,trazodone,myoclonus,106.08557457212714,1,6.0
+267,omeprazole,inflammatory bowel disease,103.20892494929006,1,9.0
+270,omeprazole,muscle rigidity,103.00202429149796,1,6.0
+818,bupropion,mydriasis,92.46708246708246,1,10.0
+773,diphenhydramine,mydriasis,91.5407537248028,1,16.0
+629,potassium chloride,atrioventricular block,87.74962140333164,1,6.0
+125,pantoprazole,serotonin syndrome,87.18817733990147,1,8.0
+139,doxycycline,infective pulmonary exacerbation of cystic fibrosis,86.63689320388349,1,7.0
+653,tadalafil,rhinovirus infection,84.60873983739837,1,10.0
+254,methadone,electrocardiogram qt prolonged,84.1903073286052,1,25.0
+42,ergocalciferol,infective pulmonary exacerbation of cystic fibrosis,84.15384615384616,1,16.0
+507,prednisone,inflammatory bowel disease,84.03185626102292,1,19.0
+647,fentanyl,arrhythmia,83.97197197197197,1,8.0
+602,tamsulosin,nephrolithiasis,83.66279069767442,1,6.0
+528,trazodone,lactic acidosis,82.70751633986929,1,7.0
+601,furosemide,rhinovirus infection,82.22923076923077,1,12.0
+656,loperamide,colitis ulcerative,82.16470588235295,1,6.0
+28,rituximab,pancreatitis acute,79.09806629834254,1,7.0
+955,crizotinib,febrile neutropenia,76.80462724935732,1,23.0
+757,ibuprofen,haemodynamic instability,76.05544993662865,1,11.0
+642,naproxen,muscle rigidity,75.28752436647173,1,7.0
+13,adalimumab,inflammatory bowel disease,74.62929061784897,1,14.0
+321,spironolactone,atrioventricular block,74.61818181818182,1,6.0
+661,benzonatate,cardiac arrest,74.21458333333334,1,7.0
+1035,fluticasone,infective pulmonary exacerbation of cystic fibrosis,72.10404624277457,1,14.0
+8,insulin lispro,infective pulmonary exacerbation of cystic fibrosis,71.5060465116279,1,9.0
+954,calcium carbonate,colitis ulcerative,70.72364672364672,1,8.0
+695,methylprednisolone,posterior reversible encephalopathy syndrome,70.39032815198618,1,8.0
+747,ibuprofen,circulatory collapse,64.65185185185184,1,14.0
+1037,potassium,febrile neutropenia,64.36465638148668,1,8.0
+815,bupropion,electrocardiogram qrs complex prolonged,64.32575757575758,1,7.0
+800,leflunomide,pulmonary oedema,63.13978494623656,1,8.0
+422,benazepril,hypotension,62.815384615384616,1,6.0
+43,folic acid,colitis ulcerative,61.68380952380952,1,23.0
+918,rivaroxaban,febrile neutropenia,61.18933333333333,1,12.0
+644,naproxen,myoclonus,57.46875,1,8.0
+574,mycophenolate mofetil,parainfluenzae virus infection,57.19897959183673,1,9.0
+77,baclofen,coma,56.486146095717885,1,23.0
+687,cyclobenzaprine,sinus tachycardia,55.68055555555556,1,7.0
+275,omeprazole,infective pulmonary exacerbation of cystic fibrosis,52.4360824742268,1,33.0
+132,citalopram,tachypnoea,51.72774193548387,1,7.0
+314,amlodipine,posterior reversible encephalopathy syndrome,51.71986143187067,1,9.0
+88,bortezomib,blood bilirubin increased,50.11500353857042,1,11.0
+824,bupropion,tachypnoea,49.82116182572614,1,9.0
+272,omeprazole,myoclonus,49.17649333075585,1,10.0
+54,cholecalciferol,colitis ulcerative,47.90321074744541,1,36.0
+196,acetaminophen,inflammatory bowel disease,47.11911111111111,1,11.0
+693,methylprednisolone,generalised tonic-clonic seizure,46.92227979274612,1,8.0
+813,levofloxacin,infective pulmonary exacerbation of cystic fibrosis,46.05984555984556,1,9.0
+820,bupropion,serotonin syndrome,45.718964441671865,1,33.0
+308,amlodipine,lactic acidosis,45.6765605875153,1,15.0
+76,baclofen,bradycardia,45.246153846153845,1,17.0
+204,acetaminophen,mydriasis,45.016310794780544,1,14.0
+408,oxycodone,hypoalbuminaemia,42.93963068181818,1,7.0
+297,treprostinil,rhinovirus infection,42.38289467186806,1,17.0
+81,baclofen,status epilepticus,41.67378640776699,1,8.0
+310,amlodipine,pulseless electrical activity,41.0916597853014,1,10.0
+901,dexamethasone,clostridium test positive,41.02876392847888,1,20.0
+516,prednisone,multiple sclerosis relapse,40.79652734949476,1,39.0
+907,hydralazine,hypokalaemia,40.73780487804878,1,7.0
+763,oxybutynin,multiple sclerosis relapse,40.598828125,1,37.0
+531,trazodone,multiple organ dysfunction syndrome,40.5981045981046,1,8.0
+683,cyclobenzaprine,cardiac arrest,38.97346698113208,1,11.0
+668,ondansetron,colitis ulcerative,38.94058441558442,1,27.0
+160,acetaminophen,abortion spontaneous,38.46233998213754,1,42.0
+432,bosentan,rhinovirus infection,38.023984736985554,1,14.0
+933,ambrisentan,rhinovirus infection,37.90573825056584,1,10.0
+200,acetaminophen,menorrhagia,37.78502559219147,2,1.0
+835,quetiapine,electrocardiogram qt prolonged,37.445544554455445,1,17.0
+369,levothyroxine,uterine perforation,36.18867924528302,1,28.0
+75,cholecalciferol,infective pulmonary exacerbation of cystic fibrosis,35.60172022207268,1,33.0
+809,sertraline,infective pulmonary exacerbation of cystic fibrosis,34.47035957240039,1,8.0
+114,sildenafil,rhinovirus infection,34.29932233729702,1,13.0
+334,methylphenidate,abnormal behaviour,33.99029982363316,1,39.0
+166,acetaminophen,anhedonia,33.8798877336225,1,37.0
+902,dexamethasone,posterior reversible encephalopathy syndrome,33.8648561057817,1,22.0
+969,tofacitinib,colitis ulcerative,33.80275229357798,1,8.0
+899,dexamethasone,brain oedema,33.52931108258461,2,1.0
+131,citalopram,myoclonus,32.937792161093135,1,8.0
+40,cyanocobalamin,hospice care,32.753107906514174,1,42.0
+180,acetaminophen,circulatory collapse,32.7380028038391,1,14.0
+339,lansoprazole,colitis ulcerative,32.37866666666667,1,13.0
+262,omeprazole,colitis ulcerative,32.37589103869654,1,15.0
+336,hyoscyamine,colitis ulcerative,32.30769230769231,1,10.0
+967,ruxolitinib,weight increased,31.970479704797082,2,1.0
+968,ruxolitinib,contusion,31.970479704797082,2,1.0
+1015,nivolumab,cytokine release syndrome,31.486631016042782,1,8.0
+239,acetaminophen,haemodynamic instability,31.41165432098765,1,11.0
+774,diphenhydramine,myoclonus,31.395933537385226,1,11.0
+646,dicyclomine,colitis ulcerative,31.19696969696969,1,10.0
+89,bortezomib,colitis,30.621029945553538,1,21.0
+745,ibuprofen,acidosis,30.41799746514576,1,11.0
+340,lansoprazole,infective pulmonary exacerbation of cystic fibrosis,30.31664411366712,1,24.0
+45,folic acid,small intestinal obstruction,30.13662551440329,1,8.0
+490,clonidine,abnormal behaviour,30.101382488479263,1,12.0
+816,bupropion,generalised tonic-clonic seizure,29.837333664967044,1,18.0
+378,loratadine,infective pulmonary exacerbation of cystic fibrosis,29.678532901833872,1,16.0
+1038,mometasone furoate,infective pulmonary exacerbation of cystic fibrosis,29.38571428571429,1,24.0
+741,sulfamethoxazole,infective pulmonary exacerbation of cystic fibrosis,27.610416666666666,1,17.0
+388,duloxetine,affect lability,27.38270454898313,2,1.0
+865,dexamethasone,hypoalbuminaemia,27.35078172238058,1,20.0
+298,treprostinil,respiratory syncytial virus infection,27.34940411700975,1,12.0
+489,clonidine,aggression,26.913961875322,1,16.0
+850,dexamethasone,brain herniation,26.34094942324756,1,15.0
+822,bupropion,status epilepticus,26.084416491963665,1,14.0
+872,dexamethasone,muscle spasms,26.051665677714677,2,1.0
+808,sertraline,menstruation irregular,25.886131386861315,1,9.0
+246,acetaminophen,infective pulmonary exacerbation of cystic fibrosis,25.68522357121706,1,9.0
+72,cholecalciferol,respiratory syncytial virus infection,25.490562913907286,1,9.0
+92,bortezomib,hypoxia,24.6594249201278,1,12.0
+87,bortezomib,alanine aminotransferase increased,24.0280112044818,1,10.0
+738,sulfamethoxazole,parainfluenzae virus infection,23.87567567567568,1,22.0
+494,fluticasone propionate,infective pulmonary exacerbation of cystic fibrosis,23.748863831246783,1,47.0
+748,ibuprofen,depressed level of consciousness,23.02828794595736,1,10.0
+874,dexamethasone,neuropathy peripheral,22.87339992758412,2,2.0
+878,dexamethasone,pulmonary haemorrhage,22.51331437435368,1,11.0
+486,methotrexate,musculoskeletal stiffness,22.48872944693575,2,2.0
+126,citalopram,agitation,22.23101076555024,1,13.0
+821,bupropion,sinus tachycardia,21.82321428571429,1,11.0
+439,methotrexate,bronchitis,21.81683405069345,2,2.0
+762,amoxicillin,seizure,21.683700209643607,1,19.0
+477,methotrexate,squamous cell carcinoma of skin,21.19878068345901,1,22.0
+905,aripiprazole,dystonia,20.937878787878788,1,13.0
+70,cholecalciferol,poor venous access,20.429860650298608,1,12.0
+242,acetaminophen,respiratory syncytial virus infection,20.192042328042326,1,11.0
+759,ibuprofen,hospice care,20.12810103743798,1,24.0
+80,baclofen,respiratory failure,19.98507462686567,1,18.0
+848,dexamethasone,blood culture positive,19.749415128671693,1,32.0
+832,budesonide,colitis ulcerative,19.41399743754004,1,18.0
+381,fluoxetine,aggression,18.945799098860324,1,15.0
+274,omeprazole,tachypnoea,18.940927555856465,1,11.0
+24,infliximab,inflammatory bowel disease,18.802696356888585,1,53.0
+641,naproxen,metabolic acidosis,18.59898762654668,1,12.0
+576,daunorubicin,atrial fibrillation,18.27962085308057,1,14.0
+959,ruxolitinib,febrile neutropenia,17.783037475345168,1,308.0
+914,tiotropium,asthma,17.612241653418124,1,11.0
+96,oseltamivir,hallucination,17.58730158730159,1,20.0
+457,methotrexate,nasopharyngitis,17.381830151415414,2,3.0
+481,methotrexate,tachypnoea,17.247652455477603,1,38.0
+752,ibuprofen,metabolic acidosis,17.064893148809233,1,16.0
+465,methotrexate,psoriasis,16.8969552238806,2,2.0
+521,prednisone,infective pulmonary exacerbation of cystic fibrosis,16.855547885590806,1,14.0
+426,lamotrigine,crying,16.836557059961315,1,12.0
+181,acetaminophen,colitis ulcerative,16.72961718410856,1,24.0
+428,bosentan,alanine aminotransferase increased,16.289452166802942,1,14.0
+840,metoclopramide,febrile neutropenia,16.00420168067227,1,13.0
+101,sildenafil,cyanosis,15.632815460401668,1,14.0
+456,methotrexate,muscle spasms,15.557412270231566,2,2.0
+823,bupropion,tachycardia,15.468021778584392,1,16.0
+205,acetaminophen,myoclonus,15.422880853586248,1,12.0
+506,prednisone,hyperbilirubinaemia,15.285413067777665,1,15.0
+83,amphetamine,abnormal behaviour,15.082554207280683,1,17.0
+834,budesonide,infective pulmonary exacerbation of cystic fibrosis,15.016722408026755,1,13.0
+963,ruxolitinib,neutrophil count decreased,14.913040050457267,1,53.0
+910,insulin detemir,diabetic ketoacidosis,14.780588538977819,2,3.0
+598,furosemide,viral infection,14.777725524910784,1,10.0
+451,methotrexate,hypoalbuminaemia,14.728313577586206,1,26.0
+109,sildenafil,respiratory distress,14.630589070262598,1,26.0
+501,prednisone,colitis ulcerative,14.392270485130023,1,60.0
+330,methylphenidate,agitation,14.290350877192983,1,33.0
+654,diazepam,seizure,14.101245529658405,1,29.0
+633,irinotecan,stomatitis,14.08410138248848,1,25.0
+753,ibuprofen,pulmonary oedema,13.879694462126034,1,18.0
+758,ibuprofen,transaminases increased,13.855146124523507,1,15.0
+363,levothyroxine,mood swings,13.471693899579408,2,3.0
+904,aripiprazole,aggression,13.456839492553778,1,23.0
+359,levothyroxine,menorrhagia,13.35608995256907,1,31.0
+485,methotrexate,peripheral swelling,13.303411884631533,2,5.0
+82,amphetamine,aggression,13.25014854426619,1,15.0
+380,montelukast,infective pulmonary exacerbation of cystic fibrosis,13.088964346349746,1,18.0
+115,azithromycin,anxiety,12.986791123635093,2,3.0
+852,dexamethasone,coagulopathy,12.985794473229706,1,19.0
+110,sildenafil,viral infection,12.952021986650962,1,20.0
+660,tacrolimus,posterior reversible encephalopathy syndrome,12.948717948717947,1,14.0
+624,hydrocortisone,colitis ulcerative,12.935991140642304,1,19.0
+158,morphine,febrile neutropenia,12.92270531400966,1,24.0
+680,ondansetron,posterior reversible encephalopathy syndrome,12.89516129032258,1,12.0
+952,apixaban,catheter management,12.506960738307525,1,37.0
+856,dexamethasone,disseminated intravascular coagulation,12.28745148771022,1,14.0
+427,hydroxyzine,febrile neutropenia,12.26829564794554,1,13.0
+765,clonazepam,seizure,12.19534484687978,1,23.0
+596,furosemide,respiratory distress,12.149685366180211,1,17.0
+769,diphenhydramine,electrocardiogram qt prolonged,12.119349845201238,1,18.0
+1023,sodium chloride,infective pulmonary exacerbation of cystic fibrosis,12.028455284552846,1,66.0
+113,sildenafil,central venous catheterisation,11.92613888888889,1,46.0
+434,methotrexate,alopecia,11.913421855374137,2,4.0
+14,adalimumab,clostridium difficile infection,11.907322068612393,1,20.0
+265,omeprazole,hip fracture,11.70427666717534,1,47.0
+19,infliximab,colitis ulcerative,11.688989214948585,1,191.0
+303,amlodipine,cardiac arrest,11.621462264150944,1,27.0
+829,finasteride,depression,11.620758718190386,1,21.0
+23,infliximab,gastroenteritis viral,11.472407654650643,1,22.0
+699,azathioprine,colitis ulcerative,11.428571428571429,1,15.0
+26,infliximab,pruritus,11.396619841966638,2,4.0
+488,methotrexate,posterior reversible encephalopathy syndrome,11.33423180592992,1,30.0
+648,fentanyl,serotonin syndrome,11.196110744891232,1,13.0
+372,levothyroxine,multiple sclerosis relapse,11.12017190437819,1,43.0
+430,bosentan,respiratory distress,11.089882740575636,1,23.0
+526,leucovorin,stomatitis,11.035223079503522,1,16.0
+466,methotrexate,pulmonary haemorrhage,10.87271747912739,1,24.0
+38,cyanocobalamin,multiple sclerosis relapse,10.787787868958809,1,49.0
+891,dexamethasone,tachypnoea,10.786516489223578,1,28.0
+862,dexamethasone,hepatic steatosis,10.75106727037516,1,14.0
+625,hydrocortisone,stomatitis,10.704206730769233,1,29.0
+418,cyclophosphamide,disease progression,10.672877622503883,2,3.0
+709,gabapentin,febrile neutropenia,10.652787416146197,1,20.0
+12,adalimumab,colitis ulcerative,10.506036217303825,1,36.0
+116,azithromycin,infective pulmonary exacerbation of cystic fibrosis,10.386191677175283,1,33.0
+440,methotrexate,coagulopathy,10.364903901706274,1,32.0
+869,dexamethasone,lactic acidosis,10.351594751829094,1,16.0
+98,sildenafil,catheterisation cardiac,10.130527350147396,1,15.0
+471,methotrexate,respiratory distress,10.120683937060102,1,49.0
+305,amlodipine,febrile neutropenia,10.10139842359522,1,20.0
+455,methotrexate,lethargy,10.086669665617034,1,40.0
+71,cholecalciferol,clostridium difficile infection,10.079575365057176,1,18.0
+148,metoprolol,hip fracture,10.07339849343211,1,71.0
+678,ondansetron,disease progression,10.06985815602837,2,3.0
+690,famotidine,throat irritation,10.034448492878445,2,4.0
+295,treprostinil,viral infection,9.877426771117166,1,23.0
+635,etoposide,stomatitis,9.830163496830163,1,34.0
+454,methotrexate,joint swelling,9.798396745632935,2,5.0
+900,dexamethasone,deep vein thrombosis,9.794005798090044,2,5.0
+636,oxcarbazepine,seizure,9.73886562618957,1,39.0
+431,bosentan,viral infection,9.70279146141215,1,19.0
+520,prednisone,hospice care,9.677680548234054,1,38.0
+329,methylphenidate,aggression,9.634330985915494,1,37.0
+677,ondansetron,emotional distress,9.538828877674444,2,4.0
+1018,cannabidiol,seizure,9.517391304347829,1,22.0
+718,doxorubicin,atrial fibrillation,9.44727964178372,1,29.0
+280,cetirizine,infective pulmonary exacerbation of cystic fibrosis,9.41054061784897,1,17.0
+906,lisdexamfetamine,aggression,9.36774193548387,1,30.0
+868,dexamethasone,ileus,9.365334122258792,1,16.0
+929,temsirolimus,stomatitis,9.308298319327733,1,37.0
+958,ruxolitinib,dyspnoea,9.13956012567838,2,5.0
+279,cetirizine,migraine,9.121605394420843,2,4.0
+487,methotrexate,clostridium test positive,9.064403125842093,1,28.0
+79,baclofen,hypotension,9.048305084745763,1,20.0
+1014,vedolizumab,colitis ulcerative,8.992972911708035,1,35.0
+1,human immunoglobulin g,atrial fibrillation,8.754954954954956,1,29.0
+407,oxycodone,febrile neutropenia,8.661578805809574,1,35.0
+425,lamotrigine,agitation,8.522358722358723,1,18.0
+337,allopurinol,febrile neutropenia,8.46936843101979,1,25.0
+885,dexamethasone,septic shock,8.372049389528868,1,64.0
+522,simvastatin,diabetic ketoacidosis,8.358089826839826,1,31.0
+199,acetaminophen,intentional self-injury,8.344179678974623,2,5.0
+844,dexamethasone,ascites,8.321996100927082,1,25.0
+90,bortezomib,febrile neutropenia,8.240514469453377,1,14.0
+814,bupropion,agitation,8.216790339007712,1,17.0
+883,dexamethasone,respiratory distress,8.081754311262507,1,36.0
+733,sulfamethoxazole,febrile neutropenia,8.076321802220708,1,138.0
+309,amlodipine,seizure,8.042337471860291,1,19.0
+59,cholecalciferol,hip fracture,8.027677160699506,1,57.0
+944,apixaban,migraine,7.93087699229121,1,43.0
+566,warfarin,central venous catheterisation,7.820735266359821,1,41.0
+153,topiramate,seizure,7.797217763509899,1,26.0
+999,macitentan,hip fracture,7.769870321071314,1,55.0
+317,digoxin,pain in jaw,7.761776684853608,1,38.0
+287,treprostinil,hip fracture,7.7017637189507715,1,36.0
+794,atorvastatin,multiple sclerosis relapse,7.697155875185547,1,34.0
+540,warfarin,dermatitis contact,7.6405353624418995,2,9.0
+442,methotrexate,colitis ulcerative,7.563652721547458,1,40.0
+892,dexamethasone,thrombosis,7.45950012751849,2,5.0
+382,fluoxetine,disease progression,7.438342650443933,1,29.0
+887,dexamethasone,stomatitis,7.431246555039747,1,64.0
+161,acetaminophen,acute hepatic failure,7.417290802007985,1,218.0
+229,acetaminophen,uterine perforation,7.4044624327826,1,105.0
+453,methotrexate,insomnia,7.381413127874337,2,5.0
+696,cytarabine,atrial fibrillation,7.2130723242927965,1,23.0
+525,leucovorin,febrile neutropenia,7.20069998494656,1,47.0
+810,heparin,febrile neutropenia,7.072048611111111,1,19.0
+681,amantadine,hallucination,7.025742321906461,1,51.0
+886,dexamethasone,squamous cell carcinoma of skin,6.9396713999263415,1,58.0
+970,tofacitinib,body height decreased,6.73326359832636,1,41.0
+203,acetaminophen,multiple sclerosis,6.640512656881515,1,58.0
+499,prednisone,blood bilirubin increased,6.628306878306878,1,19.0
+285,treprostinil,fluid retention,6.618257311591719,2,5.0
+688,famotidine,atrial fibrillation,6.5449406444318825,1,56.0
+416,cyclophosphamide,stomatitis,6.471526877430937,1,98.0
+374,levothyroxine,emotional distress,6.465993705381131,1,50.0
+634,etoposide,neutrophil count decreased,6.465655664585193,2,7.0
+411,cyclophosphamide,atrial fibrillation,6.459485658892627,1,48.0
+889,dexamethasone,tachycardia,6.412020569130839,1,63.0
+236,acetaminophen,brain oedema,6.41013495701275,2,7.0
+293,treprostinil,respiratory distress,6.402885138813282,1,21.0
+863,dexamethasone,hip fracture,6.386705461056401,1,61.0
+511,prednisone,respiratory distress,6.3838125095580365,1,25.0
+194,acetaminophen,hip fracture,6.303251814171411,1,94.0
+870,dexamethasone,mucosal inflammation,6.2863482076330826,1,24.0
+234,acetaminophen,multiple sclerosis relapse,6.274025874081218,1,89.0
+333,methylphenidate,irritability,6.244463869463869,1,29.0
+64,cholecalciferol,multiple sclerosis,6.242740527149413,1,71.0
+532,losartan,diabetic ketoacidosis,6.224686617730096,1,36.0
+68,cholecalciferol,multiple sclerosis relapse,6.214146228059979,1,114.0
+719,doxorubicin,septic shock,6.203405107661492,1,33.0
+438,methotrexate,atrial fibrillation,6.198623063683304,1,30.0
+611,lisinopril,full blood count decreased,6.192543840751433,1,53.0
+619,lisinopril,migraine,6.138637582878899,1,50.0
+447,methotrexate,gait disturbance,6.121530270399619,2,8.0
+150,metoprolol,migraine,6.109902187053523,2,11.0
+858,dexamethasone,febrile neutropenia,6.097299944601897,1,161.0
+853,dexamethasone,colitis,6.064869451697128,1,49.0
+812,levofloxacin,febrile neutropenia,6.048665375453594,1,26.0
+768,diphenhydramine,cardiac failure congestive,5.919580774303307,1,41.0
+803,capecitabine,hospice care,5.841970702045329,1,74.0
+1025,pancrelipase amylase,infective pulmonary exacerbation of cystic fibrosis,5.827896512935883,1,88.0
+913,calcium,influenza like illness,5.795855614973262,1,42.0
+449,methotrexate,hyperbilirubinaemia,5.7542340361539495,1,33.0
+755,ibuprofen,uterine perforation,5.689177258819403,1,114.0
+728,hydrochlorothiazide,malabsorption,5.685572421620088,1,48.0
+948,apixaban,subdural haematoma,5.592082244821795,1,89.0
+903,dexamethasone,multiple organ dysfunction syndrome,5.573981352323618,1,24.0
+385,duloxetine,irritability,5.570551664436924,1,88.0
+444,methotrexate,febrile neutropenia,5.569936264360817,1,412.0
+811,heparin,pyrexia,5.3977389516957865,1,39.0
+962,ruxolitinib,neutropenia,5.376120811703633,1,48.0
+123,pantoprazole,migraine,5.371271894305745,1,52.0
+938,apixaban,gastric haemorrhage,5.370419569626951,1,181.0
+571,warfarin,catheter management,5.351607479492536,1,92.0
+450,methotrexate,hyperglycaemia,5.334877752262596,1,47.0
+163,acetaminophen,agitation,5.28568159978035,1,24.0
+716,gabapentin,multiple sclerosis relapse,5.222852900136974,1,98.0
+836,quetiapine,hallucination,5.221170331718226,1,84.0
+0,alteplase,haemorrhage intracranial,5.204631434139631,1,50.0
+700,gabapentin,abdominal pain,5.2004535147392295,1,26.0
+965,ruxolitinib,pyrexia,5.191462862318841,1,143.0
+27,infliximab,clostridium difficile infection,5.090710382513661,1,56.0
+492,fluticasone propionate,gastrointestinal haemorrhage,5.074990784138185,1,70.0
+777,diphenhydramine,throat irritation,5.033878697735911,1,80.0
+185,acetaminophen,ear infection,5.006438831104507,1,21.0
+754,ibuprofen,seizure,4.9796766963902535,1,24.0
+669,ondansetron,febrile neutropenia,4.934981813834933,1,100.0
+988,macitentan,arthritis,4.875189179917669,1,69.0
+788,atorvastatin,migraine,4.850495512738718,1,52.0
+135,pregabalin,hypoacusis,4.8381243661257605,1,110.0
+237,acetaminophen,emotional distress,4.833857401756533,1,116.0
+775,diphenhydramine,seizure,4.824349614527245,1,29.0
+307,amlodipine,hypotension,4.775953458306399,1,42.0
+474,methotrexate,seizure,4.774820630837959,1,63.0
+419,vincristine,asthenia,4.756345235258746,2,21.0
+36,cyanocobalamin,migraine,4.754733511803359,1,54.0
+441,methotrexate,colitis,4.747353744263057,1,73.0
+32,cyanocobalamin,atrial fibrillation,4.733195030900534,1,139.0
+410,cyclophosphamide,asthenia,4.728482871125611,2,10.0
+95,tramadol,thrombocytopenia,4.7072841695827545,1,56.0
+590,furosemide,migraine,4.696322170620586,1,65.0
+746,ibuprofen,atrial fibrillation,4.695610765478116,1,41.0
+464,methotrexate,pruritus,4.69465208639356,2,11.0
+313,amlodipine,acute kidney injury,4.661943650886939,1,37.0
+732,sulfamethoxazole,atrial fibrillation,4.661316776007498,1,54.0
+22,infliximab,dehydration,4.585157126823794,1,35.0
+137,pregabalin,body height decreased,4.58213028468288,1,89.0
+503,prednisone,febrile neutropenia,4.563055302235913,1,77.0
+651,tadalafil,dermatitis contact,4.487910577914014,2,13.0
+133,pregabalin,migraine,4.478434940855324,1,78.0
+86,lorazepam,febrile neutropenia,4.474111634108402,1,29.0
+673,ondansetron,migraine,4.4638829918776475,2,13.0
+984,riociguat,migraine,4.450665707088881,1,66.0
+84,lorazepam,atrial fibrillation,4.424361900809297,1,78.0
+154,lidocaine,febrile neutropenia,4.382222222222223,1,29.0
+6,insulin lispro,diabetic ketoacidosis,4.326901053595969,1,70.0
+244,acetaminophen,hospice care,4.310956370362311,1,88.0
+460,methotrexate,neutrophil count decreased,4.303925877096609,1,70.0
+864,dexamethasone,hyperglycaemia,4.292018033591067,1,31.0
+554,warfarin,migraine,4.2756754006614095,1,64.0
+224,acetaminophen,tachycardia,4.238189960118762,1,40.0
+277,cetirizine,atrial fibrillation,4.209073664242808,1,49.0
+784,atorvastatin,diabetic ketoacidosis,4.20687619462389,1,61.0
+609,lisinopril,diabetic ketoacidosis,4.131356685633001,1,71.0
+1019,sodium chloride,atrial fibrillation,4.117527403414196,1,61.0
+29,rituximab,throat irritation,4.110210341805434,1,104.0
+513,prednisone,tachycardia,4.106818511969464,1,41.0
+767,diphenhydramine,atrial fibrillation,4.103621190533464,1,72.0
+405,oxycodone,atrial fibrillation,4.07177033492823,1,75.0
+908,insulin aspart,diabetic ketoacidosis,4.065205148833467,1,81.0
+463,methotrexate,pleural effusion,4.02942267006914,1,55.0
+841,dexamethasone,abdominal pain,4.029016798582196,1,80.0
+62,cholecalciferol,migraine,4.023116572813138,1,102.0
+220,acetaminophen,seizure,4.015344310164782,1,43.0
+543,warfarin,gastric haemorrhage,4.003350505250644,1,297.0
+284,treprostinil,dermatitis contact,4.0016015374759775,2,26.0
+776,diphenhydramine,tachycardia,3.974867256637168,1,38.0
+319,alprazolam,atrial fibrillation,3.9672356512773512,1,70.0
+3,human immunoglobulin g,migraine,3.9519430860472378,2,16.0
+361,levothyroxine,migraine,3.92015549088582,1,115.0
+476,methotrexate,septic shock,3.915722897644151,1,74.0
+497,prednisone,atrial fibrillation,3.907540440925534,1,171.0
+353,levothyroxine,gastrointestinal haemorrhage,3.9029553550774927,1,157.0
+876,dexamethasone,pleural effusion,3.880696431151568,1,34.0
+186,acetaminophen,febrile neutropenia,3.858373652233008,1,44.0
+327,spironolactone,pain in jaw,3.812208605782416,1,83.0
+429,bosentan,pain in jaw,3.799613735927269,1,62.0
+750,ibuprofen,hypotension,3.7890401549444856,1,31.0
+911,calcium,atrial fibrillation,3.77083185840708,1,98.0
+749,ibuprofen,gastrointestinal haemorrhage,3.746700890834969,1,52.0
+1032,lifitegrast,vision blurred,3.701402046229632,1,88.0
+412,cyclophosphamide,dyspnoea,3.699683647867351,2,16.0
+790,atorvastatin,pancreatitis,3.690164391195319,1,86.0
+518,prednisone,disease progression,3.67536231884058,1,198.0
+128,citalopram,depression,3.6719214753123137,2,19.0
+324,spironolactone,hyperkalaemia,3.653757736516357,1,128.0
+884,dexamethasone,seizure,3.638269282450954,1,36.0
+201,acetaminophen,migraine,3.602341780816402,1,208.0
+640,naproxen,anaemia,3.601951889841619,1,75.0
+679,ondansetron,hospice care,3.6001866183654427,1,82.0
+108,sildenafil,pyrexia,3.599762873041934,1,36.0
+250,metformin,diabetic ketoacidosis,3.5907023673272693,1,189.0
+415,cyclophosphamide,plasma cell myeloma,3.5745326469791383,1,49.0
+1012,macitentan,catheter management,3.562837483547176,1,132.0
+9,insulin glargine,diabetic ketoacidosis,3.489949185473024,1,91.0
+720,doxorubicin,stomatitis,3.481797717922844,1,48.0
+387,duloxetine,paraesthesia,3.4596672092602647,2,19.0
+697,cytarabine,chills,3.4485523090174253,1,62.0
+577,daunorubicin,febrile neutropenia,3.448520290625554,2,30.0
+479,methotrexate,tachycardia,3.437687734954294,1,101.0
+18,infliximab,chest discomfort,3.4282355455808484,1,86.0
+1021,sodium chloride,hereditary angioedema,3.426148109316426,1,97.0
+17,infliximab,abdominal pain,3.400502627370345,1,61.0
+666,ondansetron,atrial fibrillation,3.394943624810174,1,167.0
+508,prednisone,neutropenia,3.3701342207432057,1,38.0
+658,ranitidine,flushing,3.358255560401221,1,94.0
+478,methotrexate,stomatitis,3.32297375846564,1,89.0
+877,dexamethasone,pneumonia,3.3179085364530208,2,36.0
+839,enoxaparin,haemorrhage,3.313638463092867,1,77.0
+291,treprostinil,pyrexia,3.3088462786786432,1,47.0
+175,acetaminophen,cardiac failure congestive,3.2905027486150287,1,196.0
+562,warfarin,subdural haematoma,3.267286615266771,1,134.0
+1034,dupilumab,eczema,3.25990675990676,1,60.0
+736,sulfamethoxazole,hyperkalaemia,3.2514150496923806,1,117.0
+470,methotrexate,rash,3.24143874845903,2,22.0
+770,diphenhydramine,febrile neutropenia,3.2356669944280565,1,38.0
+541,warfarin,flushing,3.231506908092337,1,207.0
+936,apixaban,flushing,3.2167797035920622,1,76.0
+607,lisinopril,atrial fibrillation,3.214638310507368,1,168.0
+127,citalopram,anxiety,3.214458593982723,2,24.0
+1001,macitentan,migraine,3.209870932557717,1,112.0
+942,apixaban,haemoglobin decreased,3.1943152971041746,1,253.0
+594,furosemide,pain in jaw,3.1789031907615404,1,113.0
+226,acetaminophen,throat irritation,3.1507807223171365,2,29.0
+558,warfarin,pain in jaw,3.1494362157125986,1,246.0
+348,levothyroxine,atrial fibrillation,3.145293077582512,1,245.0
+851,dexamethasone,cardiac arrest,3.1405217144075626,1,42.0
+213,acetaminophen,plasma cell myeloma,3.1187376526011854,1,198.0
+712,gabapentin,migraine,3.111384168697447,1,109.0
+613,lisinopril,gastrointestinal haemorrhage,3.0832442210251747,1,171.0
+867,dexamethasone,hypoxia,3.0714474095292967,1,48.0
+268,omeprazole,migraine,3.060118138490698,1,84.0
+950,apixaban,haemorrhage,3.053813977534426,1,248.0
+51,cholecalciferol,cardiac failure congestive,3.0352230728616685,1,123.0
+940,apixaban,gastrointestinal haemorrhage,3.029799140943269,1,347.0
+1027,selexipag,migraine,3.027942258798341,2,32.0
+338,allopurinol,cytokine release syndrome,3.010133465150766,2,56.0
+118,pantoprazole,cardiac failure congestive,3.0063593262902666,1,103.0
+551,warfarin,international normalised ratio abnormal,3.001793863099921,1,112.0
+240,acetaminophen,transaminases increased,2.9937998052502937,2,35.0
+459,methotrexate,neutropenia,2.986219425061948,1,141.0
+545,warfarin,gastrointestinal haemorrhage,2.963367702767116,1,377.0
+173,acetaminophen,atrial fibrillation,2.9377595318610967,1,292.0
+500,prednisone,cardiac failure congestive,2.936563983927919,1,99.0
+452,methotrexate,hypotension,2.9271940507941943,1,137.0
+509,prednisone,pyrexia,2.916194944390326,1,116.0
+219,acetaminophen,pyrexia,2.896788545681906,1,110.0
+586,furosemide,gastrointestinal haemorrhage,2.896554523214609,1,275.0
+467,methotrexate,pyrexia,2.8860133027201345,1,318.0
+443,methotrexate,dehydration,2.851752793551736,1,79.0
+534,warfarin,anaemia,2.850787387377128,1,443.0
+857,dexamethasone,dyspnoea,2.845634165165938,2,25.0
+710,gabapentin,gastrointestinal haemorrhage,2.830060954203002,1,86.0
+621,lisinopril,neutropenia,2.82731081887308,2,37.0
+178,acetaminophen,chronic obstructive pulmonary disease,2.795298662820672,1,136.0
+188,acetaminophen,full blood count decreased,2.795218058267978,1,90.0
+807,sertraline,depression,2.7860916644662823,2,39.0
+715,gabapentin,plasma cell myeloma,2.7838471093044266,1,99.0
+730,sulfamethoxazole,asthenia,2.751659968785517,1,115.0
+652,tadalafil,urinary tract infection,2.747066145092461,1,106.0
+352,levothyroxine,flushing,2.7309478261459463,2,44.0
+727,hydrochlorothiazide,atrial fibrillation,2.7231884844672503,1,120.0
+704,gabapentin,atrial fibrillation,2.7019854234732343,1,130.0
+189,acetaminophen,gastrointestinal haemorrhage,2.6988789509679365,1,201.0
+350,levothyroxine,cardiac failure congestive,2.6773974621760024,1,160.0
+491,fluticasone propionate,anaemia,2.6686230446912016,1,106.0
+971,canagliflozin,diabetic ketoacidosis,2.6540357874909977,1,232.0
+15,pegaspargase,nausea,2.6455831790531605,1,74.0
+934,apixaban,fluid overload,2.6440255524138654,1,82.0
+866,dexamethasone,hypotension,2.642494644389123,1,100.0
+259,omeprazole,atrial fibrillation,2.637771382525613,1,198.0
+49,cholecalciferol,atrial fibrillation,2.636307475068397,1,200.0
+252,metformin,white blood cell count decreased,2.626232713103123,1,129.0
+482,methotrexate,urinary tract infection,2.62282138261785,1,75.0
+1016,empagliflozin,diabetic ketoacidosis,2.6194187836797536,1,163.0
+197,acetaminophen,influenza like illness,2.6161927439574413,1,137.0
+383,duloxetine,anxiety,2.595790936105072,1,189.0
+630,potassium chloride,gastrointestinal haemorrhage,2.578394795263937,1,143.0
+847,dexamethasone,atrial fibrillation,2.576629671316124,1,297.0
+568,warfarin,haemorrhage,2.57406093106987,1,366.0
+584,furosemide,flushing,2.5737271259279897,1,122.0
+315,digoxin,headache,2.572581275398562,1,100.0
+472,methotrexate,rheumatoid arthritis,2.5720198113847617,1,167.0
+706,gabapentin,cardiac failure congestive,2.506550875960042,1,104.0
+980,riociguat,flushing,2.492127171961444,1,137.0
+552,warfarin,international normalised ratio increased,2.480371247606065,1,646.0
+627,potassium chloride,atrial fibrillation,2.4793277935438747,1,212.0
+825,escitalopram,pneumonia,2.4763557244760253,1,99.0
+805,sertraline,anxiety,2.468776463049001,1,159.0
+560,warfarin,palpitations,2.468566496270204,1,197.0
+248,metformin,atrial fibrillation,2.464114951837438,1,135.0
+974,pomalidomide,asthenia,2.4638331277335426,1,215.0
+433,methotrexate,abdominal pain,2.4596864148163737,1,140.0
+475,methotrexate,sepsis,2.452634721600239,1,113.0
+924,rivaroxaban,pulmonary embolism,2.448032642170987,1,139.0
+723,hydrochlorothiazide,anxiety,2.4478705686414464,1,136.0
+701,gabapentin,anxiety,2.4465670950561536,1,226.0
+919,rivaroxaban,gastrointestinal haemorrhage,2.428122446127532,1,533.0
+286,treprostinil,gastrointestinal haemorrhage,2.4130049392437605,1,111.0
+879,dexamethasone,pyrexia,2.4083085201793724,1,129.0
+786,atorvastatin,haemoglobin decreased,2.3853016851749733,1,198.0
+547,warfarin,haemoglobin decreased,2.374712872803566,1,303.0
+73,cholecalciferol,disease progression,2.370979079737272,1,254.0
+600,furosemide,white blood cell count decreased,2.3390133234707777,2,51.0
+639,acyclovir,headache,2.33756665532108,2,78.0
+779,diphenhydramine,vomiting,2.3333239784463404,1,71.0
+261,omeprazole,cardiac failure congestive,2.327526577076713,1,140.0
+676,ondansetron,pyrexia,2.310855479372863,1,74.0
+409,oxycodone,neutropenia,2.3106239915301257,1,107.0
+273,omeprazole,platelet count decreased,2.3095856666611927,1,162.0
+1020,sodium chloride,headache,2.3009083252109135,2,71.0
+120,pantoprazole,gastrointestinal haemorrhage,2.298877843942018,1,150.0
+893,dexamethasone,urinary tract infection,2.2938956376385744,1,281.0
+743,mercaptopurine,febrile neutropenia,2.272727272727273,1,280.0
+617,lisinopril,hyperkalaemia,2.2656446506786936,1,203.0
+365,levothyroxine,palpitations,2.26110731185622,1,171.0
+187,acetaminophen,flushing,2.2583861677050643,2,74.0
+588,furosemide,headache,2.2574677011459707,1,486.0
+707,gabapentin,depression,2.256838406039262,1,203.0
+435,methotrexate,anaemia,2.255645336198244,1,107.0
+355,levothyroxine,haemoglobin decreased,2.243228016536894,1,216.0
+140,metoprolol,anxiety,2.235582116770236,1,126.0
+1007,macitentan,urinary tract infection,2.223808269762812,1,165.0
+97,sildenafil,cardiac failure congestive,2.220682863042552,1,148.0
+570,warfarin,pulmonary arterial hypertension,2.218469774792572,2,125.0
+302,amlodipine,atrial fibrillation,2.2087719298245614,1,199.0
+739,sulfamethoxazole,acute kidney injury,2.207974252580062,1,190.0
+379,montelukast,headache,2.202031812203777,2,95.0
+401,lenalidomide,weight increased,2.198811457762468,1,211.0
+344,levothyroxine,anxiety,2.191656432099088,1,260.0
+895,dexamethasone,vomiting,2.186886770518484,1,84.0
+637,acyclovir,asthenia,2.177083333333333,1,231.0
+843,dexamethasone,alanine aminotransferase increased,2.1715961309798018,2,109.0
+714,gabapentin,neutropenia,2.171494364568997,2,94.0
+168,acetaminophen,anxiety,2.1679823789856023,1,408.0
+155,lidocaine,sinusitis,2.166952329941082,1,230.0
+391,lenalidomide,asthenia,2.1655730204119705,1,808.0
+436,methotrexate,arthralgia,2.1641423099547814,1,213.0
+66,cholecalciferol,sinusitis,2.150490196078432,1,214.0
+182,acetaminophen,depression,2.1494072252186127,1,302.0
+299,amlodipine,anxiety,2.148557988706187,1,140.0
+664,ondansetron,abdominal pain,2.1474337477290972,2,128.0
+782,atorvastatin,atrial fibrillation,2.129623065106936,1,250.0
+992,macitentan,cardiac failure congestive,2.1291520337402163,1,188.0
+55,cholecalciferol,depression,2.126783214100769,1,158.0
+737,sulfamethoxazole,pyrexia,2.125606237338081,1,88.0
+512,prednisone,sinusitis,2.1093616986346087,1,199.0
+256,omeprazole,anxiety,2.105819394663481,2,93.0
+860,dexamethasone,headache,2.1022706459391487,1,210.0
+413,cyclophosphamide,febrile neutropenia,2.101423651620301,1,354.0
+796,atorvastatin,decreased appetite,2.0885468891975467,1,281.0
+461,methotrexate,pain in extremity,2.0876288659793816,1,155.0
+996,macitentan,flushing,2.08331253452602,1,299.0
+215,acetaminophen,platelet count decreased,2.081458359741412,1,235.0
+376,levothyroxine,disease progression,2.07611799658759,1,258.0
+247,metformin,anaemia,2.0596657711808173,1,175.0
+926,rivaroxaban,vomiting,2.05536231884058,1,146.0
+322,spironolactone,headache,2.053521026084661,1,237.0
+484,methotrexate,vomiting,2.041658290680233,2,66.0
+399,lenalidomide,urinary tract infection,2.0372174541384624,1,503.0
+397,lenalidomide,sinusitis,2.0300848740131663,1,151.0
+828,levetiracetam,seizure,2.020123235640477,2,84.0
+34,cyanocobalamin,headache,2.0073122499560627,1,270.0
+580,furosemide,atrial fibrillation,2.0047295149704407,1,336.0
+99,sildenafil,chest pain,1.9949848673110733,1,395.0
+538,warfarin,chest pain,1.981390848520478,1,279.0
+57,cholecalciferol,headache,1.9802135938405496,1,536.0
+278,cetirizine,headache,1.9637215354586859,2,87.0
+211,acetaminophen,paraesthesia,1.96290035482453,1,229.0
+978,riociguat,chest pain,1.9610323027286856,1,242.0
+976,riociguat,asthenia,1.960765987186025,1,247.0
+257,omeprazole,asthenia,1.9599926502352512,1,465.0
+177,acetaminophen,chest discomfort,1.954264245127715,2,96.0
+986,riociguat,pain in jaw,1.9491311193256275,1,214.0
+721,hydrochlorothiazide,angioedema,1.9484805036477628,1,208.0
+603,lisinopril,anaemia,1.936370035306357,1,256.0
+146,metoprolol,headache,1.9354315239589752,1,315.0
+930,ambrisentan,pain in jaw,1.9308050708554785,1,310.0
+897,dexamethasone,peripheral swelling,1.9291028232279528,1,271.0
+496,prednisone,asthenia,1.9239222632925312,1,287.0
+916,apremilast,headache,1.922095303531297,1,404.0
+53,cholecalciferol,chest pain,1.9139876512577971,2,113.0
+845,dexamethasone,asthenia,1.9020359752763591,1,503.0
+191,acetaminophen,haemoglobin decreased,1.9004450492828864,1,234.0
+990,macitentan,asthenia,1.895469003836125,1,430.0
+921,rivaroxaban,headache,1.872796743697479,1,202.0
+121,pantoprazole,headache,1.8635761725516908,1,287.0
+725,hydrochlorothiazide,asthenia,1.863420657024774,1,280.0
+164,acetaminophen,anaemia,1.8625386148680825,1,443.0
+514,prednisone,urinary tract infection,1.8604786376950304,1,201.0
+597,furosemide,urinary tract infection,1.8555756645252044,1,288.0
+227,acetaminophen,thrombocytopenia,1.8548295869040827,1,211.0
+932,ambrisentan,vomiting,1.848152899643222,2,115.0
+243,acetaminophen,disease progression,1.8472827030738483,1,317.0
+582,furosemide,chest pain,1.8454742294066897,1,245.0
+208,acetaminophen,neutropenia,1.8430068802243245,1,263.0
+342,levothyroxine,anaemia,1.83496646826077,1,304.0
+93,tramadol,headache,1.8347625346277672,1,258.0
+142,metoprolol,asthenia,1.831942751740388,1,587.0
+578,furosemide,asthenia,1.83052955619554,1,566.0
+994,macitentan,chest pain,1.825218642903787,1,432.0
+106,sildenafil,pain in jaw,1.824710052329965,1,422.0
+1005,macitentan,pain in jaw,1.817680707057432,1,442.0
+536,warfarin,asthenia,1.8111871966394344,1,406.0
+300,amlodipine,asthenia,1.8097310739882453,1,525.0
+346,levothyroxine,asthenia,1.8096362124064265,1,582.0
+771,diphenhydramine,headache,1.808978426395939,1,456.0
+1030,selexipag,vomiting,1.8075535892612464,1,327.0
+632,potassium chloride,headache,1.7997828131209204,1,222.0
+674,ondansetron,neutropenia,1.7953594425945023,1,219.0
+210,acetaminophen,oedema peripheral,1.792470640290555,1,232.0
+670,ondansetron,headache,1.7890248658486383,1,388.0
+875,dexamethasone,plasma cell myeloma,1.788623772458677,1,967.0
+650,tadalafil,asthenia,1.7808062205393247,1,235.0
+326,spironolactone,nausea,1.7773553524223766,1,282.0
+549,warfarin,headache,1.7773303056696503,1,587.0
+144,metoprolol,atrial fibrillation,1.7760812129989825,1,455.0
+170,acetaminophen,asthenia,1.7752899914919555,1,646.0
+393,lenalidomide,full blood count decreased,1.7727974283517158,1,469.0
+192,acetaminophen,headache,1.7715239010248112,1,988.0
+102,sildenafil,flushing,1.7711995996766232,1,304.0
+47,cholecalciferol,asthenia,1.7658750429668104,1,456.0
+448,methotrexate,headache,1.7605560434774907,1,250.0
+605,lisinopril,asthenia,1.7493716434913116,1,378.0
+946,apixaban,nausea,1.7493077614068882,1,284.0
+403,lenalidomide,decreased appetite,1.7431329350584852,1,465.0
+282,treprostinil,chest pain,1.7423190076652928,1,534.0
+4,human immunoglobulin g,sinusitis,1.7357768211767288,1,365.0
+665,ondansetron,asthenia,1.7275014783178162,1,320.0
+792,atorvastatin,vomiting,1.7239542405982762,1,275.0
+290,treprostinil,pain in jaw,1.7233134017118887,1,392.0
+159,acetaminophen,abdominal pain,1.7223550706314965,2,244.0
+222,acetaminophen,sinusitis,1.7190016477308838,1,423.0
+281,treprostinil,asthenia,1.7141275212351457,1,354.0
+504,prednisone,headache,1.7128186419143916,1,431.0
+780,atorvastatin,asthenia,1.7117542460057216,1,505.0
+367,levothyroxine,pneumonia,1.707589342930233,1,525.0
+2,human immunoglobulin g,headache,1.704828985024034,2,172.0
+389,lenalidomide,anaemia,1.7045199253892844,1,510.0
+458,methotrexate,nausea,1.6957722616021236,1,328.0
+1039,remdesivir,alanine aminotransferase increased,1.6914883352630388,1,502.0
+599,furosemide,vomiting,1.6859283580178557,2,263.0
+111,sildenafil,vomiting,1.677013829855592,1,431.0
+157,etonogestrel,menorrhagia,1.6743619078252414,1,217.0
+615,lisinopril,headache,1.6721678430145983,1,336.0
+564,warfarin,vomiting,1.6594989278249777,1,329.0
+151,metoprolol,vomiting,1.6517328083086729,1,275.0
+703,gabapentin,asthenia,1.640809857058667,1,338.0
+854,dexamethasone,diarrhoea,1.630832964380787,1,892.0
+711,gabapentin,headache,1.6209196384084277,2,223.0
+241,acetaminophen,decreased appetite,1.6115268963702365,1,365.0
+288,treprostinil,oxygen saturation decreased,1.60900065287377,1,322.0
+873,dexamethasone,nausea,1.60301689489777,1,442.0
+395,lenalidomide,pyrexia,1.598775271606358,1,309.0
+263,omeprazole,headache,1.5956194155648014,1,478.0
+357,levothyroxine,headache,1.594612066055998,1,583.0
+370,levothyroxine,vomiting,1.5883485572278522,1,400.0
+1010,macitentan,peripheral swelling,1.5826356271279107,1,367.0
+217,acetaminophen,pneumonia,1.5745288003436213,1,788.0
+881,dexamethasone,rash,1.5594680488094737,1,528.0
+228,acetaminophen,urinary tract infection,1.5585486489000966,1,431.0
+1009,macitentan,vomiting,1.540355764850686,2,289.0
+296,treprostinil,vomiting,1.5303229009575083,2,283.0
+306,amlodipine,headache,1.512239768278938,1,404.0
+1003,macitentan,nausea,1.508813984924823,1,870.0
+104,sildenafil,nausea,1.4933610963909187,1,750.0
+592,furosemide,nausea,1.4928261812374224,1,504.0
+1028,selexipag,nausea,1.4810636556531778,1,633.0
+556,warfarin,nausea,1.471704628541144,1,532.0
+982,riociguat,headache,1.4649807061947635,1,609.0
+231,acetaminophen,vomiting,1.4384937607278516,1,821.0
+206,acetaminophen,nausea,1.3991326212612063,1,1258.0
+184,acetaminophen,diarrhoea,1.3836409842448527,1,890.0
+364,levothyroxine,nausea,1.3605939553830395,1,727.0
+998,macitentan,headache,1.338323139137187,2,713.0

@@ -1,0 +1,333 @@
+,source,target,weight,type,count
+2,leuprolide,pelvic pain,147.20332398014244,1,14.0
+485,ibuprofen,menorrhagia,147.20332398014244,1,48.0
+451,gabapentin,prostate cancer,147.20332398014244,1,18.0
+241,lenalidomide,prostate cancer,147.20332398014244,1,52.0
+519,atorvastatin,prostate cancer,147.20332398014244,1,28.0
+582,rivaroxaban,menorrhagia,147.20332398014244,1,38.0
+583,rivaroxaban,vaginal haemorrhage,147.20332398014244,1,68.0
+612,denosumab,prostatic specific antigen increased,147.20332398014244,1,18.0
+613,denosumab,prostate cancer,147.20332398014244,1,14.0
+490,ibuprofen,uterine perforation,147.20332398014244,1,125.0
+205,levothyroxine,vaginal haemorrhage,147.20332398014244,1,73.0
+206,levothyroxine,prostate cancer,147.20332398014244,1,21.0
+122,acetaminophen,uterine perforation,147.20332398014244,1,118.0
+392,lisinopril,breast cancer,147.20332398014244,1,25.0
+177,amlodipine,prostate cancer,147.20332398014244,1,30.0
+153,omeprazole,prostate cancer,147.20332398014244,1,26.0
+162,levonorgestrel,uterine perforation,147.20332398014244,1,1259.0
+163,levonorgestrel,emotional distress,147.20332398014244,1,596.0
+123,acetaminophen,vaginal haemorrhage,147.20332398014244,1,59.0
+128,acetaminophen,prostate cancer,147.20332398014244,1,33.0
+113,acetaminophen,prostatic specific antigen increased,147.20332398014244,1,24.0
+93,acetaminophen,breast cancer,147.20332398014244,1,56.0
+403,lisinopril,vaginal haemorrhage,147.20332398014244,1,26.0
+406,risperidone,gynaecomastia,147.20332398014244,1,36.0
+164,levonorgestrel,genital haemorrhage,147.20332398014244,1,530.0
+280,prednisone,prostatic specific antigen increased,147.20332398014244,1,30.0
+283,prednisone,prostate cancer,147.20332398014244,1,22.0
+288,trazodone,priapism,147.20332398014244,1,67.0
+104,acetaminophen,menorrhagia,147.20332398014244,1,49.0
+84,acetaminophen,abortion spontaneous,147.20332398014244,1,43.0
+178,digoxin,serotonin syndrome,147.20332398014244,1,20.0
+466,hydrochlorothiazide,prostate cancer,147.20332398014244,1,17.0
+41,cholecalciferol,prostatic specific antigen increased,147.20332398014244,1,18.0
+44,cholecalciferol,prostate cancer,147.20332398014244,1,17.0
+53,sildenafil,erectile dysfunction,147.20332398014244,1,18.0
+558,dexamethasone,prostate cancer,147.20332398014244,1,31.0
+569,calcium,prostatic specific antigen increased,147.20332398014244,1,14.0
+415,naproxen,gastric haemorrhage,123.29004329004329,1,64.0
+618,copper,cough,58.520440251572325,1,7.0
+384,tizanidine,serotonin syndrome,50.78895463510848,1,25.0
+225,lenalidomide,hiccups,48.50428919523348,1,45.0
+292,verapamil,rhabdomyolysis,48.27021494370522,1,20.0
+441,ezetimibe,rhabdomyolysis,41.00674820750738,1,27.0
+407,clopidogrel,gastric haemorrhage,40.75597863942419,1,96.0
+620,copper,pyrexia,38.30048076923077,1,9.0
+550,dexamethasone,hiccups,34.741937987504365,1,35.0
+219,lenalidomide,breast cancer,32.553320106640214,1,35.0
+433,ondansetron,emotional distress,30.87384419570996,1,53.0
+626,dabigatran,gastric haemorrhage,29.932248130224373,1,73.0
+488,ibuprofen,pelvic pain,27.563739734680983,1,58.0
+314,warfarin,gastric haemorrhage,27.46583981561509,1,337.0
+477,ibuprofen,gastric haemorrhage,26.39362101313321,1,62.0
+419,meloxicam,gastric haemorrhage,24.51047120418848,1,21.0
+244,methotrexate,alopecia,23.495281083299137,1,108.0
+290,trazodone,serotonin syndrome,21.83690987124464,1,40.0
+248,methotrexate,bronchitis,21.086380099774484,1,97.0
+596,apixaban,gastric haemorrhage,20.613671824591453,1,185.0
+189,methylphenidate,dystonia,20.09597156398104,1,28.0
+483,ibuprofen,melaena,19.069627851140456,1,27.0
+576,rivaroxaban,gastric haemorrhage,15.580197761922925,1,126.0
+491,ibuprofen,emotional distress,13.484464975004746,1,85.0
+209,fluoxetine,aggression,13.453776435045317,1,24.0
+486,ibuprofen,metabolic acidosis,13.238431790905452,1,25.0
+592,apixaban,alopecia,11.922776664205085,1,51.0
+294,verapamil,acute kidney injury,11.612744090441932,1,24.0
+561,lisdexamfetamine,aggression,10.488960441582336,1,33.0
+417,fentanyl,serotonin syndrome,10.483509879047404,1,44.0
+324,warfarin,haemorrhage intracranial,10.338735284426203,1,122.0
+614,tofacitinib,urinary tract infection,9.427721706365226,1,307.0
+522,heparin,hereditary angioedema,9.15939393939394,1,56.0
+211,fluoxetine,serotonin syndrome,8.99030303030303,1,32.0
+559,docetaxel,neutrophil count decreased,8.931812044288415,1,29.0
+411,potassium chloride,ventricular tachycardia,8.850669778770042,1,27.0
+495,amoxicillin,angioedema,8.802558398220246,1,34.0
+183,spironolactone,hyperkalaemia,8.69968066670561,1,134.0
+458,hydrochlorothiazide,angioedema,8.363599146391948,1,272.0
+443,gabapentin,alopecia,8.189680280392286,1,121.0
+572,hydroxychloroquine,electrocardiogram qt prolonged,8.149991823385118,1,34.0
+298,losartan,alopecia,8.102094620042298,1,90.0
+320,warfarin,haematuria,7.602931750987243,1,104.0
+348,warfarin,haemorrhage,7.602372530880992,1,396.0
+390,lisinopril,angioedema,7.204994459689044,1,1786.0
+622,water,hereditary angioedema,7.199124726477024,1,60.0
+563,calcium,alopecia,7.086535028401406,1,121.0
+124,acetaminophen,emotional distress,6.920760789550271,1,128.0
+574,dexlansoprazole,acute kidney injury,6.894011976047905,1,29.0
+300,losartan,angioedema,6.788391982518273,1,97.0
+135,metformin,bladder cancer,6.773740196857386,1,71.0
+421,ondansetron,alopecia,6.578082426435557,1,79.0
+29,cholecalciferol,alopecia,6.57177516741684,1,222.0
+524,heparin,thrombocytopenia,6.437512507504502,1,116.0
+344,warfarin,subarachnoid haemorrhage,6.412644459551325,1,40.0
+302,losartan,hyperkalaemia,6.409223144057752,1,48.0
+156,diltiazem,bradycardia,6.196255322885113,1,49.0
+456,hydrochlorothiazide,alopecia,6.1286782601000045,1,104.0
+87,acetaminophen,alopecia,6.011273426150667,1,211.0
+346,warfarin,subdural haematoma,5.858567596125252,1,131.0
+332,warfarin,melaena,5.767106424490176,1,79.0
+19,cyanocobalamin,alopecia,5.4149585786484655,1,111.0
+17,bevacizumab,white blood cell count decreased,5.121427407085416,1,163.0
+328,warfarin,international normalised ratio abnormal,5.107751699405877,1,108.0
+435,metronidazole,sepsis,4.98679638637943,1,39.0
+60,metoprolol,alopecia,4.970288382520312,1,128.0
+386,lisinopril,alopecia,4.969182290695395,1,91.0
+624,sodium chloride,hereditary angioedema,4.884238947013162,1,108.0
+590,tocilizumab,aspartate aminotransferase increased,4.84427397260274,1,43.0
+0,etanercept,urinary tract infection,4.804268309452436,1,206.0
+262,prednisone,alopecia,4.789549557303153,1,108.0
+530,carvedilol,bradycardia,4.778724878724879,1,84.0
+274,prednisone,hyperkalaemia,4.749757984486704,1,44.0
+511,atorvastatin,rhabdomyolysis,4.70975054749521,1,115.0
+538,enoxaparin,haemorrhage,4.5204934806759045,1,86.0
+260,methotrexate,urinary tract infection,4.5044819078947365,1,138.0
+165,amlodipine,alopecia,4.495803933857031,1,127.0
+479,ibuprofen,gastrointestinal haemorrhage,4.476796478805856,1,59.0
+7,human immunoglobulin g,urinary tract infection,4.469656008203598,1,183.0
+600,apixaban,haematuria,4.418581645300762,1,80.0
+143,omeprazole,alopecia,4.399139985493731,1,127.0
+505,atorvastatin,alopecia,4.379582254064481,1,88.0
+471,sulfamethoxazole,hyperkalaemia,4.37568771057381,1,138.0
+9,adalimumab,urinary tract infection,4.200887467519489,1,228.0
+358,furosemide,haematuria,4.181424657534246,1,63.0
+278,prednisone,palpitations,4.166485666974904,1,94.0
+395,lisinopril,hyperkalaemia,3.9314867663214335,1,230.0
+330,warfarin,international normalised ratio increased,3.926402222895107,1,605.0
+528,pioglitazone,bladder cancer,3.922433599852954,1,88.0
+526,heparin,heparin-induced thrombocytopenia,3.909937944714382,1,97.0
+191,levothyroxine,alopecia,3.909214871514489,1,259.0
+588,tocilizumab,alanine aminotransferase increased,3.90532997963828,1,53.0
+356,furosemide,coronary artery disease,3.8219496119910703,1,53.0
+131,metformin,alopecia,3.814324589282151,1,86.0
+610,denosumab,hypocalcaemia,3.798298658284273,1,41.0
+542,paclitaxel,neutrophil count decreased,3.784786641929499,1,170.0
+167,amlodipine,angioedema,3.6799513772511614,1,121.0
+13,rituximab,throat irritation,3.638447548128067,1,104.0
+296,epinephrine,urinary tract infection,3.625595348549514,1,171.0
+215,lenalidomide,basal cell carcinoma,3.567394467956003,1,86.0
+160,diltiazem,acute kidney injury,3.5565006016614555,1,64.0
+374,furosemide,sinusitis,3.5143922357675463,1,145.0
+462,hydrochlorothiazide,hyponatraemia,3.484803588419193,1,153.0
+270,prednisone,febrile neutropenia,3.479307426020679,1,207.0
+250,methotrexate,febrile neutropenia,3.428716555847546,1,401.0
+258,methotrexate,thrombocytopenia,3.4244755244755245,1,86.0
+464,hydrochlorothiazide,urinary tract infection,3.420134791073836,1,161.0
+318,warfarin,haematoma,3.407175068058548,1,87.0
+565,calcium,plasma cell myeloma,3.405806090312946,1,61.0
+503,diphenhydramine,urinary tract infection,3.368392054231152,1,270.0
+534,bupropion,seizure,3.32319700788682,1,56.0
+213,lenalidomide,alopecia,3.3140367656191776,1,89.0
+570,calcium,deep vein thrombosis,3.289729630535845,1,58.0
+276,prednisone,neutrophil count decreased,3.241706738085093,1,74.0
+235,lenalidomide,squamous cell carcinoma of skin,3.235575315905596,1,90.0
+199,levothyroxine,palpitations,3.2270759543486816,1,246.0
+25,cyanocobalamin,plasma cell myeloma,3.2249436472593325,1,67.0
+100,acetaminophen,hyperkalaemia,3.217295467766672,1,78.0
+552,dexamethasone,myocardial infarction,3.204159313471054,1,116.0
+497,amoxicillin,headache,3.1827976625273924,1,116.0
+475,ibuprofen,anxiety,3.1360026789131266,1,210.0
+536,quetiapine,hallucination,3.130596083187672,1,80.0
+376,furosemide,swelling,3.098886486095065,1,184.0
+105,acetaminophen,migraine,3.079872373035836,1,222.0
+15,bevacizumab,neutrophil count decreased,3.066161948650428,1,207.0
+454,doxorubicin,dyspnoea,3.062583366680005,1,113.0
+616,pomalidomide,urinary tract infection,3.0159889782543936,1,121.0
+481,ibuprofen,hypotension,3.014249227046646,1,85.0
+284,prednisone,disease progression,2.99472058995974,1,173.0
+540,paclitaxel,flushing,2.98686198920586,1,153.0
+342,warfarin,palpitations,2.977248610358328,1,251.0
+445,gabapentin,febrile neutropenia,2.9748611195897685,1,80.0
+388,lisinopril,anaphylactic reaction,2.971627527335181,1,95.0
+281,prednisone,rheumatoid arthritis,2.95079014860074,1,152.0
+181,spironolactone,headache,2.940142820709003,1,301.0
+439,carboplatin,pneumonia,2.9376,1,77.0
+256,methotrexate,rheumatoid arthritis,2.9291846778345887,1,206.0
+532,carvedilol,urinary tract infection,2.9010104851279306,1,120.0
+316,warfarin,gastrointestinal haemorrhage,2.871970222153508,1,307.0
+82,lidocaine,urinary tract infection,2.8690644574661546,1,174.0
+437,carboplatin,neutrophil count decreased,2.8621172516803584,1,207.0
+586,rivaroxaban,acute kidney injury,2.851868396833171,1,120.0
+62,metoprolol,bradycardia,2.8304038084195504,1,183.0
+380,furosemide,pulmonary arterial hypertension,2.8173544743179617,1,172.0
+606,apixaban,haemorrhage,2.811806001008887,1,191.0
+546,dexamethasone,blood potassium decreased,2.809174952032095,1,100.0
+72,metoprolol,sinusitis,2.803337416384144,1,117.0
+580,rivaroxaban,haematuria,2.795894338077199,1,132.0
+608,denosumab,arthralgia,2.761717598506436,1,299.0
+584,rivaroxaban,haemorrhage,2.734051783240424,1,175.0
+54,azithromycin,alanine aminotransferase increased,2.7098615186271893,1,85.0
+268,prednisone,bronchitis,2.7032390624920337,1,161.0
+179,zoledronic acid,nausea,2.69915658781034,1,162.0
+47,carbidopa,confusional state,2.689511297500856,1,143.0
+264,prednisone,aspartate aminotransferase increased,2.669862390415695,1,84.0
+513,atorvastatin,sinusitis,2.6526844813902684,1,115.0
+139,metformin,urinary tract infection,2.5866324112564127,1,212.0
+493,ibuprofen,acute kidney injury,2.549147202244439,1,116.0
+33,cholecalciferol,febrile neutropenia,2.5331079177233025,1,87.0
+306,warfarin,anaemia,2.5122438121710644,1,346.0
+423,ondansetron,anxiety,2.505706344765591,1,176.0
+364,furosemide,myocardial infarction,2.4909781809266978,1,108.0
+252,methotrexate,neutropenia,2.4830126157777066,1,153.0
+304,warfarin,abdominal pain upper,2.463732437261431,1,165.0
+21,cyanocobalamin,atrial fibrillation,2.462908789241584,1,88.0
+397,lisinopril,lip swelling,2.442666207307286,1,166.0
+350,warfarin,pulmonary arterial hypertension,2.434556328482416,1,275.0
+370,furosemide,palpitations,2.424030571437035,1,184.0
+467,hydrochlorothiazide,acute kidney injury,2.4110101202978806,1,189.0
+133,metformin,atrial fibrillation,2.402192469097034,1,124.0
+401,lisinopril,urinary tract infection,2.382645390536581,1,188.0
+27,folic acid,headache,2.3613105656774604,1,237.0
+360,furosemide,headache,2.3559006397741267,1,648.0
+107,acetaminophen,myocardial infarction,2.321025795793888,1,115.0
+227,lenalidomide,myocardial infarction,2.307539271166183,1,188.0
+171,amlodipine,nasopharyngitis,2.292937015770716,1,205.0
+404,lisinopril,acute kidney injury,2.2688259089266176,1,418.0
+237,lenalidomide,urinary tract infection,2.255040610518309,1,436.0
+158,diltiazem,headache,2.245224344735673,1,285.0
+185,spironolactone,hypotension,2.241694777173844,1,133.0
+187,spironolactone,acute kidney injury,2.240830297007839,1,138.0
+68,metoprolol,myocardial infarction,2.223295649488781,1,187.0
+272,prednisone,headache,2.2212789721025645,1,543.0
+382,furosemide,acute kidney injury,2.215548301521152,1,392.0
+322,warfarin,haemoglobin decreased,2.215110344649694,1,235.0
+266,prednisone,atrial fibrillation,2.2145723898525937,1,131.0
+427,ondansetron,headache,2.2120789503707927,1,471.0
+366,furosemide,nasal congestion,2.206336943854683,1,222.0
+312,warfarin,flushing,2.201847950845494,1,228.0
+45,cholecalciferol,acute kidney injury,2.195894462588529,1,164.0
+149,omeprazole,sinusitis,2.1938783513861115,1,204.0
+118,acetaminophen,sinusitis,2.16486810042875,1,519.0
+469,sulfamethoxazole,febrile neutropenia,2.1629416694602748,1,179.0
+80,lidocaine,sinusitis,2.158641093654356,1,270.0
+175,amlodipine,urinary tract infection,2.156681070283688,1,267.0
+460,hydrochlorothiazide,headache,2.144992043021376,1,378.0
+203,levothyroxine,urinary tract infection,2.1393513681966434,1,439.0
+96,acetaminophen,febrile neutropenia,2.129179649154479,1,181.0
+89,acetaminophen,anxiety,2.126439691566164,1,463.0
+336,warfarin,oxygen saturation decreased,2.120434207488256,1,223.0
+242,oxycodone,acute kidney injury,2.1085192359070266,1,150.0
+246,methotrexate,arthralgia,2.1078397493491834,1,261.0
+352,warfarin,acute kidney injury,2.104951797553761,1,148.0
+56,pantoprazole,headache,2.1015110411580675,1,357.0
+42,cholecalciferol,sepsis,2.095876246785906,1,130.0
+49,tramadol,headache,2.094760788784731,1,322.0
+326,warfarin,headache,2.0841423265014445,1,792.0
+556,dexamethasone,urinary tract infection,2.0764063622447635,1,258.0
+74,metoprolol,syncope,2.071602361750548,1,171.0
+515,atorvastatin,urinary tract infection,2.040688975294371,1,254.0
+94,acetaminophen,bronchitis,2.0376752910099976,1,290.0
+431,ondansetron,urinary tract infection,2.03278639396169,1,254.0
+334,warfarin,nausea,2.0323020339529454,1,776.0
+217,lenalidomide,blood potassium decreased,2.0292732851925965,1,222.0
+473,sulfamethoxazole,acute kidney injury,2.019442011628275,1,213.0
+567,calcium,pneumonia,2.0128223513014896,1,136.0
+31,cholecalciferol,atrial fibrillation,2.0081296445518846,1,129.0
+340,warfarin,pain in jaw,1.9958735366338247,1,267.0
+449,gabapentin,urinary tract infection,1.9936174742845567,1,349.0
+425,ondansetron,febrile neutropenia,1.9846130284657144,1,245.0
+23,cyanocobalamin,headache,1.9823299423018523,1,360.0
+111,acetaminophen,plasma cell myeloma,1.980976607629284,1,144.0
+193,levothyroxine,atrial fibrillation,1.980125233515533,1,115.0
+5,human immunoglobulin g,rash,1.962601002842452,1,232.0
+85,acetaminophen,alanine aminotransferase increased,1.961118890515492,1,171.0
+91,acetaminophen,atrial fibrillation,1.959418144847333,1,215.0
+372,furosemide,sepsis,1.955940965177096,1,180.0
+578,rivaroxaban,gastrointestinal haemorrhage,1.9536,1,399.0
+207,levothyroxine,acute kidney injury,1.949671292914536,1,133.0
+151,omeprazole,urinary tract infection,1.93013944262733,1,306.0
+11,adalimumab,covid-19,1.9046456705247743,1,457.0
+35,cholecalciferol,headache,1.887262109212515,1,686.0
+286,prednisone,acute kidney injury,1.8787150533372727,1,177.0
+452,gabapentin,acute kidney injury,1.8731829690485613,1,194.0
+239,lenalidomide,vomiting,1.852587884357688,1,363.0
+169,amlodipine,headache,1.852098342411996,1,624.0
+76,metoprolol,urinary tract infection,1.844702416301234,1,287.0
+409,potassium chloride,nausea,1.838983111939868,1,471.0
+120,acetaminophen,urinary tract infection,1.8326396378049208,1,605.0
+594,apixaban,anaemia,1.8277940608510423,1,246.0
+223,lenalidomide,headache,1.8218171603358408,1,254.0
+368,furosemide,nausea,1.818842328689192,1,763.0
+501,diphenhydramine,sinusitis,1.816118384634452,1,421.0
+447,gabapentin,headache,1.811952256818612,1,543.0
+544,dexamethasone,atrial fibrillation,1.8064746994688283,1,254.0
+413,acyclovir,nausea,1.796679127081137,1,277.0
+145,omeprazole,headache,1.7917092109360255,1,606.0
+116,acetaminophen,sepsis,1.787637768293042,1,294.0
+126,acetaminophen,deep vein thrombosis,1.7836170822585269,1,192.0
+598,apixaban,gastrointestinal haemorrhage,1.782099447513812,1,224.0
+154,omeprazole,acute kidney injury,1.78185851695026,1,238.0
+254,methotrexate,pyrexia,1.7742994389396858,1,305.0
+338,warfarin,pain in extremity,1.7715587106834365,1,344.0
+195,levothyroxine,headache,1.7683075249735238,1,904.0
+98,acetaminophen,headache,1.7666988666701318,1,1149.0
+64,metoprolol,headache,1.7582688240396664,1,415.0
+393,lisinopril,headache,1.7570820308908706,1,351.0
+499,diphenhydramine,headache,1.7568945538818077,1,513.0
+602,apixaban,headache,1.7514822838640858,1,424.0
+310,warfarin,fluid retention,1.7461245439856643,1,364.0
+137,metformin,headache,1.7443749642779272,1,325.0
+141,metformin,acute kidney injury,1.7374548029569865,1,240.0
+39,cholecalciferol,pneumonia,1.7122730711043872,1,330.0
+507,atorvastatin,headache,1.709669526117792,1,355.0
+517,atorvastatin,vomiting,1.7062646550857192,1,340.0
+520,atorvastatin,acute kidney injury,1.7026863395820253,1,297.0
+229,lenalidomide,nausea,1.7000234421218274,1,673.0
+378,furosemide,vomiting,1.697770232284973,1,425.0
+354,furosemide,atrial fibrillation,1.6924838782477587,1,230.0
+129,acetaminophen,acute kidney injury,1.6869475398464948,1,385.0
+604,apixaban,nausea,1.68393001345895,1,434.0
+78,metoprolol,acute kidney injury,1.6769361140828167,1,317.0
+66,metoprolol,hypotension,1.673358762492326,1,362.0
+51,sildenafil,nausea,1.669456059340358,1,921.0
+554,dexamethasone,nausea,1.664047690687528,1,556.0
+362,furosemide,hypotension,1.6378515708806411,1,345.0
+37,cholecalciferol,nausea,1.622408498223058,1,895.0
+221,lenalidomide,diarrhoea,1.602222454037528,1,1664.0
+58,pantoprazole,nausea,1.600013696858093,1,566.0
+3,human immunoglobulin g,pruritus,1.5848295169688815,1,275.0
+201,levothyroxine,pneumonia,1.5667802216894262,1,248.0
+399,lisinopril,nausea,1.5538455085162568,1,582.0
+102,acetaminophen,hypotension,1.539230384807596,1,336.0
+114,acetaminophen,pyrexia,1.536799052938384,1,499.0
+197,levothyroxine,nausea,1.5163284894752116,1,1185.0
+429,ondansetron,nausea,1.5147852147852148,1,1026.0
+548,dexamethasone,diarrhoea,1.5108150364296664,1,809.0
+509,atorvastatin,nausea,1.5081125861267706,1,557.0
+308,warfarin,dyspnoea,1.4847377247333962,1,1151.0
+173,amlodipine,nausea,1.4786857569656258,1,769.0
+70,metoprolol,nausea,1.4666858913990832,1,654.0
+147,omeprazole,nausea,1.4171348851872567,1,873.0
+109,acetaminophen,nausea,1.3856747337622333,1,1499.0
+231,lenalidomide,plasma cell myeloma,1.3700401236345483,1,904.0
+233,lenalidomide,pneumonia,1.3621864887933222,1,1181.0

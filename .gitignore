@@ -1,0 +1,12 @@
+run.sh
+test/*
+*/*.log
+data/Data/*
+log/
+.idea/
+*.log
+*.pth
+*.res
+baselines/*
+analyse/*
+/analyse/
