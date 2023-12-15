@@ -3,7 +3,7 @@ import datetime
 
 if __name__ == "__main__":
 
-    for dataset in ["gender", "age"]: #"all",
+    for dataset in ["all", "gender", "age"]:
         for model_name in ["HGT"]:
             parser = argparse.ArgumentParser(description="PreciseADR")
             register_args(parser, config_file=f"config/{dataset}_HGT_config.yaml")
