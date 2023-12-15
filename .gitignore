@@ -10,3 +10,4 @@ log/
 baselines/*
 analyse/*
 /analyse/
+.DS_Store
