@@ -14,7 +14,7 @@ import yaml
 
 
 def build_dataset_func(args):
-    if args.dataset in ["gender", "age", "aim", "all"]:
+    if args.dataset in ["gender", "age", "all"]:
         args.se_type = args.dataset
         datamodule = DataModule(n_layer=args.n_gnn, batch_size=args.batch_size,
                                 split=args.split, n_data=args.n_data, add_SE=args.add_SE, args=args)
@@ -111,6 +111,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="PreciseADR")
     register_args(parser)
     args = parse_args_and_yaml(parser)
+    dataset = args.dataset
 
     if "cuda" in args.device:
         args.device = args.device if torch.cuda.is_available() else "cpu"
@@ -119,7 +120,7 @@ if __name__ == "__main__":
     res_dict = {}
     try:
         for i in range(1):
-            for model_name in ["HGT"]:
+            for model_name in ["PreciseADR_HGT"]:
                 args.model_name = model_name
                 args.seed = seed + i
 

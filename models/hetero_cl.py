@@ -11,8 +11,9 @@ from .base import BasicModelWrapper
 from .info_nce import info_nce
 
 
-class HeteroMLP(nn.Module):
+class PreciseADR_RGCN(nn.Module):
     def __init__(self, metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args=None):
+        super(PreciseADR_RGCN, self).__init__()
         self.metadata = metadata
         self.node_types, self.edge_types = metadata
         self.in_dim_dict = in_dim_dict
@@ -25,49 +26,31 @@ class HeteroMLP(nn.Module):
         self.in_dim = in_dim
         self.args = args
         self.n_layer = self.args.n_gnn
-
-        super(HeteroMLP, self).__init__()
-
+        self.n_gnn = args.n_gnn
         self.n_mlp = args.n_mlp if hasattr(args, "n_mlp") else 1
 
         nn_layers = []
         for i in range(self.n_mlp):
-            in_dim = in_dim if i == 0 else hid_dim
+            in_dim = self.in_dim if i == 0 else hid_dim
             nn_layers.append(nn.Linear(in_dim, hid_dim))
             nn_layers.append(nn.Tanh())
             nn_layers.append(nn.Dropout(args.dropout))
         self.in_lin = nn.Sequential(*nn_layers)
         self.readout = nn.Linear(self.hid_dim, self.out_dim)
 
-    def _build_x_feat(self, x):
-        x = self.in_lin(x)
-        return x
-
-    def forward(self, x_dict, edge_index_dict, ):
-        bow_feat = x_dict["patient"]
-        x = self._build_x_feat(bow_feat)
-        x = self.readout(x)
-        return x
-
-
-class RGCN(HeteroMLP):
-    def __init__(self, metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args=None):
-        self.n_gnn = args.n_gnn
-        self.n_mlp = args.n_mlp
-        super(RGCN, self).__init__(metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args)
-        # AE trans
-        nn_layers = []
+        # AE transformation layers
+        ae_layers = []
         for i in range(self.n_mlp):
-            in_dim = in_dim if i == 0 else hid_dim
-            nn_layers.append(nn.Linear(in_dim, hid_dim))
-            nn_layers.append(nn.Tanh())
-            nn_layers.append(nn.Dropout(args.dropout))
-        self.se_trans = nn.Sequential(*nn_layers)
+            in_dim = self.in_dim if i == 0 else hid_dim
+            ae_layers.append(nn.Linear(in_dim, hid_dim))
+            ae_layers.append(nn.Tanh())
+            ae_layers.append(nn.Dropout(args.dropout))
+        self.se_trans = nn.Sequential(*ae_layers)
 
-        # used for Contrastive Learning
+        # Used for Contrastive Learning
         self.cl_lin = nn.Linear(self.in_dim, self.hid_dim)
 
-        # HGNN
+        # HGNN layers
         self.convs = nn.ModuleList()
         for _ in range(self.n_gnn):
             conv = HeteroConv({
@@ -81,12 +64,16 @@ class RGCN(HeteroMLP):
 
     def build_aug(self, x):
         aug_x = torch.zeros_like(x)
-        # 将aug_x中 1% 的元素 变为 1
+        # Set 1% of the elements in aug_x to 1
         aug_mask = torch.ones_like(x)
-        # 被dropout的元素设为 1， val 的时候，不产生影响
+        # Set the elements that are dropped out to 1, so that during validation, they do not affect the results
         aug_mask = (self.aug_add(aug_mask) < 1)
         aug_x[aug_mask] = 1
         return x + aug_x
+
+    def _build_x_feat(self, x):
+        x = self.in_lin(x)
+        return x
 
     def forward(self, x_dict, edge_index_dict, return_hidden=False):
         if "info_nodes" in x_dict:
@@ -135,16 +122,17 @@ class RGCN(HeteroMLP):
         else:
             return x
 
-class HGT(RGCN):
+
+class PreciseADR_HGT(PreciseADR_RGCN):
     def __init__(self, metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args=None):
         self.n_gnn = args.n_gnn
         self.n_mlp = args.n_mlp
-        super(HGT, self).__init__(metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args)
+        super(PreciseADR_HGT, self).__init__(metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args)
 
         # HGNN
         self.convs = nn.ModuleList()
         for _ in range(self.n_gnn):
-            conv = HGTConv(hid_dim, hid_dim, metadata, 1, group='sum')
+            conv = HGTConv(hid_dim, hid_dim, metadata, 1)
             self.convs.append(conv)
 
     def forward(self, x_dict, edge_index_dict, return_hidden=False):
@@ -187,21 +175,17 @@ class HGT(RGCN):
             return x
 
 
-cur_model_dict = {"HeteroMLP": lambda args: HeteroMLP(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
-                                                      n_info=args.num_info, n_node=args.num_node,
-                                                      in_dim=args.in_dim, args=args),
+cur_model_dict = {
+    "PreciseADR_RGCN": lambda args: PreciseADR_RGCN(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
+                                                    n_info=args.num_info, n_node=args.num_node,
+                                                    in_dim=args.in_dim, args=args),
 
-                  "RGCN": lambda args: RGCN(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
-                                            n_info=args.num_info, n_node=args.num_node,
-                                            in_dim=args.in_dim, args=args),
-
-                  "HGT": lambda args: HGT(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
-                                          n_info=args.num_info, n_node=args.num_node,
-                                          in_dim=args.in_dim, args=args)}
+    "PreciseADR_HGT": lambda args: PreciseADR_HGT(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
+                                                  n_info=args.num_info, n_node=args.num_node,
+                                                  in_dim=args.in_dim, args=args)
+}
 model_dict.update(cur_model_dict)
 print(model_dict)
-
-
 
 
 class ContrastiveWrapper(BasicModelWrapper):

@@ -1,10 +1,11 @@
 from main import *
+
 import datetime
 
 if __name__ == "__main__":
 
-    for dataset in ["gender", "age"]: #"all",
-        for model_name in ["HGT"]:
+    for dataset in ["all", "gender", "age"]:
+        for model_name in ["PreciseADR_HGT"]:
             parser = argparse.ArgumentParser(description="PreciseADR")
             register_args(parser, config_file=f"config/{dataset}_HGT_config.yaml")
             args = parse_args_and_yaml(parser)
@@ -15,7 +16,7 @@ if __name__ == "__main__":
 
             res_dict = {}
             try:
-                for i in range(10):
+                for i in range(1):
                     args.model_name = model_name
                     args.seed = seed + 0
 

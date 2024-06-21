@@ -1,5 +1,7 @@
 """
-基础的PreciseADR 模型，支持异质图GNN，没有对比学习
+The basic PreciseADR models.
+Supports heterogeneous graph neural networks (HGNNs).
+Without contrastive learning.
 """
 from typing import Dict, Tuple
 
@@ -14,7 +16,7 @@ from torch_geometric.typing import NodeType, EdgeType
 from torch_geometric.nn import HeteroConv, HGTConv, SAGEConv, GATConv
 from torchmetrics.classification import MultilabelAUROC, MultilabelPrecision, MultilabelRecall
 
-from models.utils import RetrievalHitRate, RetrievalPrecision, RetrievalRecall, FocalLoss
+from models.utils import RetrievalHitRate, RetrievalPrecision, RetrievalRecall, FocalLoss, RetrievalNormalizedDCG
 
 
 class BasicEncoder(nn.Module):
@@ -82,8 +84,14 @@ class HeteroEncoder(nn.Module):
         return out
 
 
-class BaseModel(nn.Module):
+import torch
+import torch.nn as nn
+from torch_geometric.nn import HeteroConv, SAGEConv
+
+
+class PreciseADR_RGCN(nn.Module):
     def __init__(self, metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args=None):
+        super(PreciseADR_RGCN, self).__init__()
         self.metadata = metadata
         self.node_types, self.edge_types = metadata
         self.in_dim_dict = in_dim_dict
@@ -96,50 +104,7 @@ class BaseModel(nn.Module):
         self.in_dim = in_dim
         self.args = args
         self.n_layer = self.args.n_gnn
-        super(BaseModel, self).__init__()
-
-        self.build_()
-
-    def build_(self):
-        self.in_lin = nn.Linear(self.in_dim, self.hid_dim)
-        encoder = nn.ModuleList()
-        for _ in range(self.n_layer):
-            encoder.append(BasicEncoder(self.hid_dim))
-        self.encoder = nn.Sequential(*encoder)
-        self.readout = nn.Linear(self.hid_dim, self.out_dim)
-
-    def _build_x_feat(self, x, device=None):
-        x = self.in_lin(x)
-        x = self.encoder(x)
-        return x
-
-    def forward(self, x_dict, edge_index_dict, return_hidden=False):
-        bow_feat = x_dict["patient"]
-        hidden = self._build_x_feat(bow_feat, bow_feat.device)
-        x = self.readout(hidden)
-        if return_hidden:
-            return x, hidden
-        else:
-            return x
-
-
-class HeteroMLP(nn.Module):
-    def __init__(self, metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args=None):
-        self.metadata = metadata
-        self.node_types, self.edge_types = metadata
-        self.in_dim_dict = in_dim_dict
-
-        self.hid_dim = hid_dim
-        self.out_dim = out_dim
-        self.n_info = n_info
-
-        self.n_node = n_node
-        self.in_dim = in_dim
-        self.args = args
-        self.n_layer = self.args.n_gnn
-
-        super(HeteroMLP, self).__init__()
-
+        self.n_gnn = args.n_gnn
         self.n_mlp = args.n_mlp if hasattr(args, "n_mlp") else 1
 
         nn_layers = []
@@ -151,23 +116,6 @@ class HeteroMLP(nn.Module):
         self.in_lin = nn.Sequential(*nn_layers)
         self.readout = nn.Linear(self.hid_dim, self.out_dim)
 
-    def _build_x_feat(self, x):
-        x = self.in_lin(x)
-        return x
-
-    def forward(self, x_dict, edge_index_dict, ):
-        bow_feat = x_dict["patient"]
-        x = self._build_x_feat(bow_feat)
-        x = self.readout(x)
-        return x
-
-
-class RGCN(HeteroMLP):
-    def __init__(self, metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args=None):
-        self.n_gnn = args.n_gnn
-        self.n_mlp = args.n_mlp
-        super(RGCN, self).__init__(metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args)
-
         # HGNN
         self.convs = nn.ModuleList()
         for _ in range(self.n_gnn):
@@ -176,6 +124,10 @@ class RGCN(HeteroMLP):
                 for edge_type in metadata[1]
             })
             self.convs.append(conv)
+
+    def _build_x_feat(self, x):
+        x = self.in_lin(x)
+        return x
 
     def forward(self, x_dict, edge_index_dict, return_hidden=False):
         if "info_nodes" in x_dict:
@@ -209,16 +161,16 @@ class RGCN(HeteroMLP):
             return x
 
 
-class HGT(RGCN):
+class PreciseADR_HGT(PreciseADR_RGCN):
     def __init__(self, metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args=None):
         self.n_gnn = args.n_gnn
         self.n_mlp = args.n_mlp
-        super(HGT, self).__init__(metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args)
+        super(PreciseADR_HGT, self).__init__(metadata, in_dim_dict, hid_dim, out_dim, n_info, n_node, in_dim, args)
 
         # HGNN
         self.convs = nn.ModuleList()
         for _ in range(self.n_gnn):
-            conv = HGTConv(hid_dim, hid_dim, metadata, 1, group='sum')
+            conv = HGTConv(hid_dim, hid_dim, metadata, 1)
             self.convs.append(conv)
 
     def forward(self, x_dict, edge_index_dict, return_hidden=False):
@@ -239,7 +191,7 @@ class HGT(RGCN):
         att_weight = None
         for i, conv in enumerate(self.convs):
             # if i == len(self.convs) - 1 and return_att:
-            #     att_weight = HGT.get_att_weights(conv, x_dict, edge_index_dict)
+            #     att_weight = PreciseADR_HGT.get_att_weights(conv, x_dict, edge_index_dict)
             tmp_x_dict = conv(x_dict, edge_index_dict)
             for key in x_dict:
                 if key not in tmp_x_dict:
@@ -258,18 +210,12 @@ class HGT(RGCN):
 
 
 model_dict = {
-    "BaseModel": lambda args: BaseModel(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
-                                        n_info=args.num_info, n_node=args.num_node,
-                                        in_dim=args.in_dim, args=args),
-    "HeteroMLP": lambda args: HeteroMLP(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
-                                        n_info=args.num_info, n_node=args.num_node,
-                                        in_dim=args.in_dim, args=args),
 
-    "RGCN": lambda args: RGCN(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
+    "PreciseADR_RGCN": lambda args: PreciseADR_RGCN(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
                               n_info=args.num_info, n_node=args.num_node,
                               in_dim=args.in_dim, args=args),
 
-    "HGT": lambda args: HGT(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
+    "PreciseADR_HGT": lambda args: PreciseADR_HGT(args.metadata, args.in_dim_dict, args.hid_dim, args.out_dim,
                             n_info=args.num_info, n_node=args.num_node,
                             in_dim=args.in_dim, args=args),
 }
@@ -307,9 +253,10 @@ class BasicModelWrapper(LightningModule):
         self.hit_10 = RetrievalHitRate(k=10, compute_on_cpu=True)
         self.hit_20 = RetrievalHitRate(k=20, compute_on_cpu=True)
         self.hit_50 = RetrievalHitRate(k=50, compute_on_cpu=True)
+        self.ndcg = RetrievalNormalizedDCG(k=20, compute_on_cpu=True)
 
-        self.val_p_k = RetrievalPrecision(k=10, compute_on_cpu=True)
-        self.val_r_k = RetrievalRecall(k=10, compute_on_cpu=True)
+        self.p_k = RetrievalPrecision(k=10, compute_on_cpu=True)
+        self.r_k = RetrievalRecall(k=10, compute_on_cpu=True)
 
         self.auc = MultilabelAUROC(num_labels=args.out_dim)
         self.p = MultilabelPrecision(num_labels=args.out_dim, compute_on_cpu=True)
@@ -411,6 +358,21 @@ class BasicModelWrapper(LightningModule):
 
             self.hit_10(y_hat, y, indexes=indexes)
             self.log(f'{mod}_hit_10', self.hit_10.value, prog_bar=True, on_epoch=True)
+
+            self.hit_20(y_hat, y, indexes=indexes)
+            self.log(f'{mod}_hit_20', self.hit_20.value, prog_bar=True, on_epoch=True)
+
+            self.hit_50(y_hat, y, indexes=indexes)
+            self.log(f'{mod}_hit_50', self.hit_50.value, prog_bar=True, on_epoch=True)
+
+            self.ndcg(y_hat, y, indexes=indexes)
+            self.log(f'{mod}_NDCG', self.ndcg.value, prog_bar=True, on_epoch=True)
+
+            self.r_k(y_hat, y, indexes=indexes)
+            self.log(f'{mod}_recall_10', self.r_k.value, prog_bar=True, on_epoch=True)
+
+            self.p_k(y_hat, y, indexes=indexes)
+            self.log(f'{mod}_precision_10', self.p_k.value, prog_bar=True, on_epoch=True)
 
         # free memory
         y_list.clear()

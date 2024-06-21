@@ -75,7 +75,7 @@ if __name__ == "__main__":
     register_args(parser)
     args = parse_args_and_yaml(parser)
     args = parser.parse_args()
-    args.model_name = "HGT"
+    args.model_name = "PreciseADR_HGT"
     if "cuda" in args.device:
         args.device = args.device if torch.cuda.is_available() else "cpu"
 

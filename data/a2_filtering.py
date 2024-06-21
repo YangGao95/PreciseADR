@@ -124,14 +124,14 @@ def build_v2():
     filtered_data_US = filter_reasonable2(all_pd_US_pro)
     # US data
     pickle.dump(filtered_data_US, open(f"{faers_root}/filtered_data_v1.pk", 'wb'))
-    print("filtered_data_v3 info:")
+    print("filtered_data_v1 info:")
     scan_se_i_d(filtered_data_US)
     print()
 
     # All data
     filtered_data = filter_reasonable2(all_data_pd)
     pickle.dump(filtered_data, open(f"{faers_root}/filtered_data_v2.pk", 'wb'))
-    print("filtered_data_v4 info:")
+    print("filtered_data_v2 info:")
     scan_se_i_d(filtered_data)
     print()
 

@@ -15,8 +15,8 @@ from torch_geometric import transforms as T
 from torch_geometric.data import HeteroData
 from torch_geometric.data import InMemoryDataset
 from torch_geometric.loader import NeighborLoader
-from torch_geometric.transforms import BaseTransform
 from tqdm import tqdm
+from dataset.transforms import *
 
 home_path = os.getenv("HOME")
 
@@ -79,21 +79,20 @@ class PLEASESource(InMemoryDataset):
 
     def __init__(
             self,
-            root: str = f"{base_path}/../data/Data/curated",
+            root: str = f"{base_path}/",
             n_data=0,
             se_type="all",
-            force=False,
-            raw_filename=None
+            use_processed=True,
+            transform=T.RandomNodeSplit(num_val=0.125, num_test=0.125)
+            # transform=None
     ):
-        self.raw_filename = raw_filename
         self.se_type = se_type
         self.count = 0
-        self.n_data = n_data
+        self.n_data = n_data if n_data > 0 else len(pickle.load(open(f"{root}/PLEASE-US-{self.se_type}.pk", 'rb')))
         self.root = root
+        self.info_mapping = InfoMapping()  # fixed
 
-        self.pre_init()
-
-        if force:
+        if not use_processed:
             # remove existed files.
             filepath = os.path.join(root, "processed", self.processed_file_names[:-4] + "*")
             print(filepath)
@@ -101,27 +100,32 @@ class PLEASESource(InMemoryDataset):
             for f in glob.glob(filepath):
                 os.remove(f)
 
-        super(PLEASESource, self).__init__(root)
-        self.post_init()
+        super(PLEASESource, self).__init__(root, transform=transform)
+        self.data, self.slices = torch.load(self.processed_paths[0])
+        self.num_feat = self.data["patient"].bow_feat.size(1)
+        self.num_se = self.data["patient"].y.size(1)
+        self.collect_maps()
 
-    def pre_init(self):
+    def collect_maps(self):
         """
-        process before extracting from origin AE reports. Load data and build maps,
-        :param root: file_path of AE reports
-        :return:
+        map feature 2 Meddra_id/DrugBankID/InfoMap Message
+        Returns:
+
         """
-        all_data = self._load_data()
-        if self.n_data == 0:
-            self.n_data = len(all_data)
+        # personal infos
+        self.num_infos = self.info_mapping.num_elements
 
         # Feature index -> Feature name
         self.global_map = {}
-        # personal infos
-        self.info_mapping = InfoMapping()
-        self.num_infos = self.info_mapping.num_elements
 
         # AE/SE map, Indication map, Drug map
-        self.build_map(all_data)
+        self.i_map = self.data["patient"].i_map
+        self.se_map = self.data["patient"].se_map
+        self.d_map = self.data["patient"].d_map
+
+        self.d_map_rev = {v: k for k, v in self.d_map.items()}
+        self.i_map_rev = {v: k for k, v in self.i_map.items()}
+        self.se_map_rev = {v: k for k, v in self.se_map.items()}
 
         for i in range(self.info_mapping.num_elements):
             self.global_map[i] = self.info_mapping.rev_map(i)
@@ -134,21 +138,13 @@ class PLEASESource(InMemoryDataset):
         for i, d_name in enumerate(self.d_map):
             self.global_map[i + offset] = d_name
 
-    def post_init(self):
-        self.data, self.slices = torch.load(self.processed_paths[0])
-        self.num_feat = self.data["patient"].bow_feat.size(1)
-        self.num_se = self.data["patient"].y.size(1)
-
     @property
     def processed_file_names(self) -> str:
-        return f'PLEASE_{self.se_type}_v1_{self.n_data}.pt'
+        return f'PLEASE_{self.se_type}_v2_{self.n_data}.pt'
 
     @property
     def raw_file_names(self) -> List[str]:
-        if self.raw_filename is None:
-            return [f'PLEASE-US-{self.se_type}.pk']
-        else:
-            return [self.raw_filename]
+        return [f'PLEASE-US-{self.se_type}.pk']
 
     def _build_person_graph(self, record):
         """
@@ -156,7 +152,7 @@ class PLEASESource(InMemoryDataset):
         :param record: An AE record
         :return:
         """
-        if self.count % 100 == 0:
+        if self.count % 1000 == 0:
             print(f"{self.count}/{self.n_data}")
 
         infos = []
@@ -169,16 +165,17 @@ class PLEASESource(InMemoryDataset):
         drugs = set(record["drugs"])
         se = set(record["SE"])
 
-        # 2. get infos
+        # other infos from records
+        country = record["country"]
+        receipt_date = record["receipt_date"]
+
+        # 2. map infos to Features
         gender = record["gender"]
         age = record["age"]
         weight = record["weight"]
         infos.append(self.info_mapping.map_gender(gender))
         infos.append(self.info_mapping.map_weight(weight))
         infos.append(self.info_mapping.map_age(age))
-        # todo add country ?
-        infos.append(0)
-        # country = record["country"]
 
         # 3. get edge_index
         for i in indications:
@@ -193,16 +190,17 @@ class PLEASESource(InMemoryDataset):
         attrs.extend(np.array(p_i_edge_index[1]) + self.info_mapping.num_elements)
         attrs.extend(np.array(p_d_edge_index[1]) + self.info_mapping.num_elements + len(self.i_map))
 
-        # origin SE id
+        # 4. map labels
+        # origin SE id (id in meddra)
         se_list = list(se)
-        # new id
+        # new id list (id_in )
         new_se_list = []
         for each in se_list:
             new_se_list.append(self.se_map[each])
 
         self.count += 1
         return torch.LongTensor(infos).unsqueeze(0), torch.LongTensor(p_i_edge_index), \
-            torch.LongTensor(p_d_edge_index), se_list, new_se_list, attrs
+            torch.LongTensor(p_d_edge_index), new_se_list, attrs, country, receipt_date
 
     def build_base_graph(self):
         """
@@ -235,6 +233,7 @@ class PLEASESource(InMemoryDataset):
         filename = f"{self.root}/{self.raw_file_names[0]}"
         assert osp.exists(filename), f"{filename} doesn't exist in path {self.root}."
         all_pd = pickle.load(open(filename, 'rb'))
+        all_pd = all_pd.sort_values(by="receipt_date")
 
         assert len(all_pd) > 0, "No data!!!"
         if self.n_data > 0:
@@ -246,7 +245,11 @@ class PLEASESource(InMemoryDataset):
         return all_pd
 
     def process(self):
-        all_pd = self.all_pd
+        all_pd = self._load_data()
+        if self.n_data == 0:
+            self.n_data = len(all_pd)
+
+        self.build_map(all_pd)
 
         print("Generating Personal Graph START!!!!!")
         print("data size:", len(all_pd))
@@ -258,25 +261,29 @@ class PLEASESource(InMemoryDataset):
         torch.save(self.collate([self.hetero_graph]), self.processed_paths[0])
 
     def extract_patient_graph(self, all_pd):
-        info_nodes_list = []
-        se_name_index = []
-        se_id_list = []
+        count = 0
+
+        se_id_list = []  # SEs, or labels. For temporary storage of labels.
         all_p_i_edge_index = []
         all_p_d_edge_index = []
-        all_y = []
-        count = 0
-        all_feats = []
-        for info_nodes, p_i_edge_index, p_d_edge_index, se_name, se_id, attrs in tqdm(
+        all_y = []  # final labels
+        all_feats = []  # For temporary storage of features.
+        all_country = []  #
+        all_date = []  #
+        for info_nodes, p_i_edge_index, p_d_edge_index, se_id, attrs, country, receipt_date in tqdm(
                 all_pd.apply(self._build_person_graph, axis=1)):
-            info_nodes_list.append(info_nodes)
             all_p_i_edge_index.append(p_i_edge_index)
             all_p_d_edge_index.append(p_d_edge_index)
-            se_name_index.append(se_name)  # old id
             se_id_list.append(se_id)  # new id
             y = torch.zeros(1, len(self.se_map))
             y[0, se_id] = 1
             all_y.append(y)
             all_feats.append(attrs)
+
+            # for further filter
+            all_country.append(country)
+            all_date.append(receipt_date)
+
             count += 1
 
         # BOW Feature
@@ -287,63 +294,57 @@ class PLEASESource(InMemoryDataset):
             all_x.append(x)
         x = torch.stack(all_x, dim=0)
 
-
         self.hetero_graph["patient"].x = torch.arange(count)
         self.hetero_graph["patient"].num_info = self.info_mapping.num_elements
         self.hetero_graph["patient", "p_i", "indication"].edge_index = torch.cat(all_p_i_edge_index, dim=1)
         self.hetero_graph["patient", "p_d", "drug"].edge_index = torch.cat(all_p_d_edge_index, dim=1)
         self.hetero_graph["patient"].y = torch.cat(all_y, dim=0).to_sparse()
-        self.hetero_graph["patient"].ses = se_id_list
-        self.hetero_graph["patient"].se_names = se_name_index
-
         self.hetero_graph["patient"].bow_feat = x.to_sparse()
+
+        self.hetero_graph["patient"].country = all_country
+        self.hetero_graph["patient"].date = all_date
+
+        self.hetero_graph["patient"].se_map = self.se_map
+        self.hetero_graph["patient"].d_map = self.d_map
+        self.hetero_graph["patient"].i_map = self.i_map
 
     def build_map(self, all_pd):
         self.se_map = OrderedDict()
         self.i_map = OrderedDict()
         self.d_map = OrderedDict()
 
-        save_path = f"{base_path}/{self.raw_file_names[0]}_map.pth"
-        if os.path.exists(save_path):
-            self.se_map, self.i_map, self.d_map = torch.load(save_path)
+        def build_se(x):
+            se = set(x["SE"])
+            se = list(se)
+            se.sort()
+            for each in se:
+                if each not in self.se_map:
+                    self.se_map[each] = len(self.se_map)
 
-        else:
-            def build_se(x):
-                se = set(x["SE"])
-                se = list(se)
-                se.sort()
-                for each in se:
-                    if each not in self.se_map:
-                        self.se_map[each] = len(self.se_map)
+            return 1
 
-                return 1
+        def build_indication_map(x):
+            indications = set(x["indications"])
+            indications = list(indications)
+            indications.sort()
+            for each in indications:
+                if each not in self.i_map:
+                    self.i_map[each] = len(self.i_map)
 
-            def build_indication_map(x):
-                indications = set(x["indications"])
-                indications = list(indications)
-                indications.sort()
-                for each in indications:
-                    if each not in self.i_map:
-                        self.i_map[each] = len(self.i_map)
+            return 1
 
-                return 1
+        def build_drug_map(x):
+            drugs = list(set(x["drugs"]))
+            drugs.sort()
+            for each in drugs:
+                if each not in self.d_map:
+                    self.d_map[each] = len(self.d_map)
 
-            def build_drug_map(x):
-                drugs = list(set(x["drugs"]))
-                drugs.sort()
-                for each in drugs:
-                    if each not in self.d_map:
-                        self.d_map[each] = len(self.d_map)
+            return 1
 
-                return 1
-
-            all_pd.apply(build_se, axis=1)
-            all_pd.apply(build_indication_map, axis=1)
-            all_pd.apply(build_drug_map, axis=1)
-
-        self.d_map_rev = {v: k for k, v in self.d_map.items()}
-        self.i_map_rev = {v: k for k, v in self.i_map.items()}
-        self.se_map_rev = {v: k for k, v in self.se_map.items()}
+        all_pd.apply(build_se, axis=1)
+        all_pd.apply(build_indication_map, axis=1)
+        all_pd.apply(build_drug_map, axis=1)
 
 
 class DataModule(LightningDataModule):
@@ -357,6 +358,7 @@ class DataModule(LightningDataModule):
             to_homo=False,
             filtered_SE=None,
             use_processed=True,
+            se_type="all",
             args=None,
     ):
         super().__init__()
@@ -374,7 +376,7 @@ class DataModule(LightningDataModule):
         self.dataset = None
         self.setup_over = False
         self.num_neigh = args.num_neigh if hasattr(args, "num_neigh") else 10
-        self.se_type = args.se_type if hasattr(args, "se_type") else "all"
+        self.se_type = args.se_type if hasattr(args, "se_type") else se_type
 
         self.to_homo = to_homo
         self.n_data = n_data
@@ -385,28 +387,19 @@ class DataModule(LightningDataModule):
         self.num_train_per_class = self.args.num_train_per_class if hasattr(self.args, "num_train_per_class") else 10
         self.seed = self.args.seed if hasattr(self.args, "seed") else 123
 
-        if not self.use_processed:
-            data_path = self.get_final_filename()
-            if os.path.exists(data_path):
-                os.remove(data_path)
-        self.load_processed()
+        self.load()
         self.setup_over = True
 
-    def load_processed(self):
-        data_path = self.get_final_filename()
+    def load(self):
 
-        if os.path.exists(data_path):
-            self.data = torch.load(data_path)
+        self.setup()
+        if self.to_homo:
+            self.data.bow_feat = self.data.bow_feat.to_sparse()
+            self.data.y = self.data.y.to_sparse()
         else:
-            self.setup()
-            if self.to_homo:
-                self.data.bow_feat = self.data.bow_feat.to_sparse()
-                self.data.y = self.data.y.to_sparse()
-            else:
-                for nt in self.data.node_types:
-                    self.data[nt].bow_feat = self.data[nt].bow_feat.to_sparse()
-                self.data["patient"].y = self.data["patient"].y.to_sparse()
-            torch.save(self.data, data_path)
+            for nt in self.data.node_types:
+                self.data[nt].bow_feat = self.data[nt].bow_feat.to_sparse()
+            self.data["patient"].y = self.data["patient"].y.to_sparse()
 
         if self.to_homo:
             self.data.bow_feat = self.data.bow_feat.to_dense()
@@ -425,16 +418,6 @@ class DataModule(LightningDataModule):
             for nt in self.data.node_types:
                 self.data[nt].bow_feat = self.data[nt].bow_feat.to_dense()
             self.data["patient"].y = self.data["patient"].y.to_dense()
-
-        del self.data["patient"].ses
-        del self.data["patient"].se_names
-
-    def get_final_filename(self):
-        prefix = "homo" if self.to_homo else "hetero"
-        data_path = f"{base_path}/{prefix}_{self.se_type}_{self.n_data}_{self.split}_" \
-                    f"{self.num_train_per_class}_{self.seed}_add_se_{self.add_SE}.pth"
-        print("load data from:", data_path)
-        return data_path
 
     def to_hetero_data(self):
         assert self.data is not None
@@ -476,6 +459,10 @@ class DataModule(LightningDataModule):
         torch.save([train_mask, val_mask, test_mask], f_name)
 
     def get_data_info(self):
+        # only for data filtering
+        del self.dataset.data["patient"].country
+        del self.dataset.data["patient"].date
+
         self.i_start = self.dataset.info_mapping.num_elements
         self.i_end = self.i_start + len(self.dataset.i_map)
         self.d_start = self.i_end
@@ -487,7 +474,12 @@ class DataModule(LightningDataModule):
 
     def load_data(self):
         if self.dataset is None:
-            self.dataset = PLEASESource(n_data=self.n_data, se_type=self.se_type, force=not self.use_processed)
+            self.dataset = PLEASESource(
+                n_data=self.n_data,
+                se_type=self.se_type,
+                use_processed=self.use_processed,
+                transform=self.transform
+            )
             self.get_data_info()
         return self.dataset
 
@@ -496,22 +488,27 @@ class DataModule(LightningDataModule):
 
     def setup(self, stage: Optional[str] = None):
         if not self.setup_over:
-            # 1. load data
-            self.dataset = self.load_data()
-            self.data = self.dataset.data
-
-            # 2. label split
+            # 1. build data transform
+            transform_list = []
+            # label split
             if self.split == "in_order":
-                self.data = FaersRandomNodeSplit()(self.data)
+                transform_list.append(FaersRandomNodeSplit())
             elif self.split == "by_label":
-                self.data = FaersNodeSplitByLabel(num_train_per_class=self.num_train_per_class)(self.data)
+                transform_list.append(FaersNodeSplitByLabel(num_train_per_class=self.num_train_per_class))
             else:
-                self.data = T.RandomNodeSplit(num_val=0.125, num_test=0.125)(self.data)
-            # 3. Add SE nodes
+                transform_list.append(T.RandomNodeSplit(num_val=0.125, num_test=0.125))
+
+            # Add SE nodes
             if self.add_SE:
-                self.data = AddSEEdges()(self.data)
-            # 4. Add reverse links
-            self.data = T.ToUndirected(merge=False)(self.data)
+                transform_list.append(AddSEEdges())
+            # Add reverse links
+            transform_list.append(T.ToUndirected(merge=False))
+
+            self.transform = T.Compose(transform_list)
+            # 2. load data
+            self.dataset = self.load_data()
+            # transform are applied when after run dataset[0]
+            self.data = self.dataset[0]
 
             if self.to_homo:
                 self.data = self.to_homo_data()
@@ -564,148 +561,7 @@ class DataModule(LightningDataModule):
             return self.dataloader(self.data['patient'].test_mask, shuffle=False)
 
 
-class FaersRandomNodeSplit(BaseTransform):
-    def __init__(self,
-                 split="in_order",
-                 num_val=0.25,
-                 num_test=0.25,
-                 merge_seen_and_train=True
-                 ):
-        self.merge_seen_and_train = merge_seen_and_train
-        self.num_val = num_val
-        self.num_test = num_test
-        self.split = split
-        super(FaersRandomNodeSplit, self).__init__()
-
-    def __call__(
-            self,
-            data,
-    ):
-        # only faers nodes has label
-        num_faers = data["patient"].x.size(0)
-        num_seen = num_faers // 2
-
-        seen_mask = torch.zeros(num_faers, dtype=torch.bool)
-        train_mask = torch.zeros(num_faers, dtype=torch.bool)
-        val_mask = torch.zeros(num_faers, dtype=torch.bool)
-        test_mask = torch.zeros(num_faers, dtype=torch.bool)
-
-        if isinstance(self.num_val, float):
-            num_val = round((num_faers - num_seen) * self.num_val)
-        else:
-            num_val = self.num_val
-
-        if isinstance(self.num_test, float):
-            num_test = round((num_faers - num_seen) * self.num_test)
-        else:
-            num_test = self.num_test
-
-        assert num_test < num_faers
-        assert num_val < num_faers
-
-        if self.split == "in_order":
-            test_mask[-num_test:] = True
-            val_mask[-num_test - num_val:-num_test] = True
-            train_mask[-(num_faers - num_seen):-num_test - num_val] = True
-            seen_mask[-num_faers:-(num_faers - num_seen)] = True
-        else:
-            perm = torch.randperm(num_faers)
-            val_mask[perm[:num_val]] = True
-            test_mask[perm[num_val:num_val + num_test]] = True
-            train_mask[perm[num_val + num_test:-num_seen]] = True
-            seen_mask[perm[-num_seen:]] = True
-
-        if self.merge_seen_and_train:
-            train_mask = torch.logical_or(train_mask, seen_mask)
-
-        data["patient"].train_mask, data["patient"].val_mask, data[
-            "patient"].test_mask = train_mask, val_mask, test_mask
-        data["patient"].seen_mask = seen_mask
-        return data
-
-
-class FaersNodeSplitByLabel(FaersRandomNodeSplit):
-    """
-     num_train_per_class for train
-    25% for validation
-    rest for test
-    """
-
-    def __init__(self,
-                 split="in_order",
-                 num_train_per_class=10,
-                 num_val=0.25
-                 ):
-        self.split = split
-        self.num_val = num_val
-        self.num_train_per_class = num_train_per_class
-        super(FaersNodeSplitByLabel, self).__init__()
-
-    def __call__(
-            self,
-            data,
-    ):
-        # only faers nodes has label
-        num_faers = data["patient"].x.size(0)
-
-        train_mask = torch.zeros(num_faers, dtype=torch.bool)
-        val_mask = torch.zeros(num_faers, dtype=torch.bool)
-        test_mask = torch.zeros(num_faers, dtype=torch.bool)
-
-        if isinstance(self.num_val, float):
-            num_val = round(num_faers * self.num_val)
-        else:
-            num_val = self.num_val
-
-        assert num_val < num_faers
-
-        y = data["patient"].y
-        num_classes = y.size(1)
-
-        for c in range(num_classes):
-            idx = (y[:, c] == 1).nonzero(as_tuple=False).view(-1)
-            idx = idx[torch.randperm(idx.size(0))]
-            idx = idx[:self.num_train_per_class]
-            train_mask[idx] = True
-
-        remaining = (~train_mask).nonzero(as_tuple=False).view(-1)
-        remaining = remaining[torch.randperm(remaining.size(0))]
-
-        val_mask[remaining[:num_val]] = True
-        test_mask[remaining[num_val:]] = True
-
-        data["patient"].train_mask, data["patient"].val_mask, data[
-            "patient"].test_mask = train_mask, val_mask, test_mask
-        data["patient"].seen_mask = train_mask
-        return data
-
-
-class AddSEEdges(BaseTransform):
-    def __call__(
-            self,
-            data,
-    ):
-        if ("patient", "p_se", "SE") in data:
-            return data
-        # mask = data["patient"].seen_mask if hasattr(data["patient"], "seen_mask") else data["patient"].train_mask
-        mask = data["patient"].train_mask
-
-        new_edges_index = []
-        aim_nodes = data["patient"].x[mask].tolist()
-
-        for node in aim_nodes:
-            # dst = data["patient"].ses[node]
-            dst = data["patient"].y[node]
-            dst = (torch.arange(len(dst))[dst.ge(1)]).tolist()
-
-            src = [node] * len(dst)
-            new_edges_index.append(
-                torch.stack([torch.LongTensor(src), torch.LongTensor(dst)])
-            )
-        data["patient", "p_se", "SE"].edge_index = torch.cat(new_edges_index, dim=1)
-        return data
-
-
 if __name__ == '__main__':
-    dataset = PLEASESource(n_data=0, force=True)
-    DataModule(n_data=0, use_processed=False)
+    for se_type in ["all", "gender", "age"]:
+        dataset = PLEASESource(n_data=0, use_processed=False, se_type=se_type)
+        DataModule(n_data=0, use_processed=True, se_type=se_type)

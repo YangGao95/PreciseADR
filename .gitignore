@@ -12,3 +12,4 @@ analyse/*
 /analyse/
 .DS_Store
 ablation_study/
+association_mining/new_method
