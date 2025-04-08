@@ -18,3 +18,16 @@ See in `data/README.md`
 
 
 ## Cite
+
+```bib
+@article{gao2025precision,
+  title={Precision Adverse Drug Reactions Prediction with Heterogeneous Graph Neural Network},
+  author={Gao, Yang and Zhang, Xiang and Sun, Zhongquan and Chandak, Payal and Bu, Jiajun and Wang, Haishuai},
+  journal={Advanced Science},
+  volume={12},
+  number={4},
+  pages={2404671},
+  year={2025},
+  publisher={Wiley Online Library}
+}
+```
